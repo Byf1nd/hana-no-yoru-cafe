@@ -1,5 +1,5 @@
 body {
-  font-family: sans-serif;
+  font-family: 'Sawarabi Mincho', serif;
   margin: 0;
   padding: 0;
   background-color: #fffafc;
@@ -59,4 +59,17 @@ footer {
   h1 {
     font-size: 22px;
   }
+}
+
+button {
+  background: #f7cce5;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+button:hover {
+  background: #ffb3d9;
 }
