@@ -41,3 +41,22 @@ footer {
   text-align: center;
   padding: 15px;
 }
+
+@media (max-width: 768px) {
+  nav ul {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  header {
+    padding: 10px;
+  }
+
+  .hero {
+    padding: 20px 10px;
+  }
+
+  h1 {
+    font-size: 22px;
+  }
+}
