@@ -1,50 +1,64 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <title>Hana no Yoru Café</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="styles.css">
-  <link href="https://fonts.googleapis.com/css2?family=Sawarabi+Mincho&display=swap" rel="stylesheet">
-
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Hana no Yoru Café</title>
+<link rel="stylesheet" href="css/styles.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
 </head>
 <body>
-  <header>
-    <h1>🌸 Hana no Yoru Café</h1>
+<header>
+    <div class="logo">
+        <img src="images/logo.png" alt="Logo Hana no Yoru">
+        <h1>🌸 Hana no Yoru Café</h1>
+    </div>
     <nav>
         <ul>
             <li><a href="index.html">Inicio</a></li>
-            <li><a href="acerca.html">Acerca de</a></li>
+            <li><a href="acerca.html">Acerca</a></li>
             <li><a href="reservacion.html">Reservación</a></li>
             <li><a href="postres.html">Postres</a></li>
             <li><a href="bebidas.html">Bebidas</a></li>
             <li><a href="galeria.html">Galería</a></li>
-            <li><a href="sucursales.html">Ubicaciones</a></li>
+            <li><a href="sucursales.html">Sucursales</a></li>
             <li><a href="servicios.html">Servicios</a></li>
         </ul>
     </nav>
 </header>
-
-  <main>
-    <section class="hero">
+<main>
+<section class="hero">
+    <div class="hero-content">
         <h2>“Cada sorbo, una flor bajo la luna.”</h2>
-        <p>Una experiencia nocturna en cada taza.</p>
-        <a class="boton" href="reservacion.html">Reservar mesa</a>
-    </section>
-
-    <section class="recomendaciones">
-        <h3>Recomendaciones</h3>
-        <ul>
-            <li>Latte de lavanda</li>
-            <li>Tarta de yuzu</li>
-            <li>Matcha tonic</li>
-        </ul>
-    </section>
+        <p>Una experiencia nocturna japonesa con cada taza servida.</p>
+        <a href="reservacion.html" class="boton">Reserva Ahora</a>
+    </div>
+</section>
+<section class="destacados">
+    <h2>Recomendaciones de la Casa</h2>
+    <div class="cards">
+        <div class="card">
+            <img src="images/latte-lavanda.jpg" alt="Latte de Lavanda">
+            <h3>Latte de Lavanda</h3>
+            <p>Relájate con la suavidad de la lavanda y una textura cremosa única.</p>
+        </div>
+        <div class="card">
+            <img src="images/tarta-yuzu.jpg" alt="Tarta de Yuzu">
+            <h3>Tarta de Yuzu</h3>
+            <p>Refrescante mousse con cítricos japoneses y decoración minimalista.</p>
+        </div>
+        <div class="card">
+            <img src="images/matcha-tonic.jpg" alt="Matcha Tonic">
+            <h3>Matcha Tonic</h3>
+            <p>Una mezcla perfecta entre lo amargo del matcha y el toque efervescente del tónico.</p>
+        </div>
+    </div>
+</section>
 </main>
-
-  <footer>
+<footer>
     <p>© 2025 Hana no Yoru Café. Todos los derechos reservados.</p>
 </footer>
-
 </body>
 </html>
