@@ -1,149 +1,436 @@
-body {
-    margin: 0;
-    font-family: 'Roboto', sans-serif;
-    background: #fff8f9;
-    color: #333;
+/* GENERAL STYLES & RESET */
+:root {
+    /* Define colores base para fácil modificación */
+    --primary-pink: #e76f9d; /* Color rosa principal del diseño */
+    --light-pink: #fde8ed;  /* Rosa más claro para fondos */
+    --dark-text: #333;      /* Color de texto oscuro */
+    --light-text: #f8f8f8;  /* Color de texto claro */
+    --grey-text: #666;      /* Color de texto gris */
+    --button-bg: #e76f9d;   /* Fondo del botón */
+    --button-text: white;   /* Texto del botón */
+    --border-radius-lg: 15px; /* Radio de borde grande */
+    --border-radius-sm: 8px;  /* Radio de borde pequeño */
 }
 
-h1, h2, h3 {
-    font-family: 'Pacifico', cursive;
-}
-
-header {
-    background: #ffd7e7;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    align-items: center;
-    padding: 10px 20px;
-}
-
-.logo {
-    display: flex;
-    align-items: center;
-}
-
-.logo img {
-    height: 60px;
-    margin-right: 10px;
-}
-
-nav ul {
-    display: flex;
-    list-style: none;
-    gap: 15px;
-    flex-wrap: wrap;
+* {
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
 }
 
-nav a {
+body {
+    font-family: 'Roboto', sans-serif; /* Fuente principal para el cuerpo */
+    line-height: 1.6;
+    color: var(--dark-text);
+    background-color: #fcfcfc; /* Fondo general ligeramente blanco */
+}
+
+a {
     text-decoration: none;
-    color: #800040;
-    font-weight: bold;
-    transition: color 0.3s;
+    color: inherit; /* Hereda el color del padre para la navegación */
 }
 
-nav a:hover {
-    color: #b30059;
+ul {
+    list-style: none;
 }
 
-.hero {
-    background: url('images/hero-background.jpg') center/cover no-repeat;
-    color: #fff;
+img {
+    max-width: 100%;
+    height: auto;
+    display: block; /* Elimina espacio extra debajo de las imágenes */
+}
+
+/* HEADER STYLES */
+.main-header {
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
-    text-align: center;
-    height: 80vh;
-    position: relative;
+    padding: 15px 5%; /* Padding horizontal relativo */
+    background-color: var(--light-pink); /* Fondo del header */
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    position: sticky; /* Sticky header si se desea, se puede quitar */
+    top: 0;
+    z-index: 1000;
 }
 
-.hero::before {
-    content: "";
-    position: absolute;
-    top: 0; left: 0; right: 0; bottom: 0;
-    background: rgba(0,0,0,0.5);
+.main-header .logo img {
+    /* Estilos para el logo en el header */
+    height: 50px; /* Ajusta el tamaño según el logo */
+    width: auto;
+}
+
+/* Oculta el h1 en el header si ya tenemos una imagen de logo que contiene el nombre */
+.main-header .logo h1 {
+    display: none;
+}
+
+.main-nav .nav-list {
+    display: flex;
+    gap: 25px; /* Espacio entre los elementos de la navegación */
+}
+
+.main-nav .nav-list a {
+    color: var(--dark-text);
+    font-weight: 400;
+    padding: 5px 0;
+    transition: color 0.3s ease;
+}
+
+.main-nav .nav-list a:hover {
+    color: var(--primary-pink);
+}
+
+/* Hamburger Menu (para móviles) */
+.hamburger-menu {
+    display: none; /* Oculto por defecto en escritorio */
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 10px;
+    z-index: 1001; /* Asegura que esté por encima de otros elementos */
+}
+
+.hamburger-menu .bar {
+    display: block;
+    width: 25px;
+    height: 3px;
+    background-color: var(--dark-text);
+    margin: 5px 0;
+    transition: all 0.3s ease;
+}
+
+/* HERO SECTION - Primera sección grande */
+.hero-section {
+    display: grid;
+    /* Grid de 2 columnas para el contenido y las imágenes */
+    grid-template-columns: 1fr 2fr; /* Ajusta proporciones según necesitemos */
+    gap: 20px;
+    background-color: var(--light-pink); /* Fondo de la sección hero */
+    padding: 50px 5%; /* Padding superior/inferior y lateral */
+    min-height: 600px; /* Altura mínima para que se vea bien */
+    align-items: center; /* Centra verticalmente el contenido */
 }
 
 .hero-content {
-    position: relative;
-    z-index: 2;
-    max-width: 600px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
     padding: 20px;
+    background-color: #fff; /* Fondo blanco para el contenido del texto */
+    border-radius: var(--border-radius-lg);
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    max-width: 400px; /* Limita el ancho del contenido de texto */
+    margin: 0 auto; /* Centra el bloque de contenido */
 }
 
-.boton {
-    background: #ff99bb;
-    color: #fff;
-    padding: 12px 24px;
+.hero-logo {
+    width: 150px; /* Ajusta el tamaño del logo en la sección hero */
+    height: auto;
+    margin-bottom: 20px;
+}
+
+.hero-quote {
+    font-family: 'Pacifico', cursive; /* Fuente para la cita */
+    font-size: 1.8em; /* Tamaño de la cita */
+    color: var(--primary-pink);
+    margin-bottom: 30px;
+    line-height: 1.4;
+}
+
+.reserve-button {
+    background-color: var(--button-bg);
+    color: var(--button-text);
+    padding: 15px 30px;
     border: none;
-    border-radius: 30px;
-    font-size: 1.2em;
+    border-radius: var(--border-radius-sm);
+    font-size: 1.1em;
     cursor: pointer;
-    text-decoration: none;
-    display: inline-block;
-    transition: background 0.3s;
+    transition: background-color 0.3s ease;
+    font-weight: 700;
 }
 
-.boton:hover {
-    background: #e0588b;
+.reserve-button:hover {
+    background-color: #d15a86; /* Un tono más oscuro de rosa al pasar el mouse */
 }
 
-.destacados {
-    text-align: center;
-    padding: 50px 20px;
-}
-
-.cards {
+.hero-images {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 20px;
-    margin-top: 30px;
+    /* Grid de imágenes: 2 arriba (1fr cada una) y 1 abajo (que abarca las 2 columnas) */
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto auto; /* Dos filas de altura automática */
+    gap: 15px; /* Espacio entre las imágenes */
 }
 
-.card {
-    background: #ffeef5;
-    border-radius: 15px;
-    padding: 20px;
+.hero-images .image-wrapper {
+    overflow: hidden; /* Oculta partes de la imagen si se desborda */
+    border-radius: var(--border-radius-lg);
     box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-    transition: transform 0.3s;
 }
 
-.card:hover {
-    transform: translateY(-10px);
+.hero-images .image-wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Asegura que la imagen cubra el contenedor sin distorsionarse */
+    display: block;
 }
 
-.card img {
-    max-width: 100%;
-    border-radius: 12px;
+.hero-images .top-left {
+    grid-column: 1 / 2; /* Columna 1 */
+    grid-row: 1 / 2;    /* Fila 1 */
+}
+
+.hero-images .top-right {
+    grid-column: 2 / 3; /* Columna 2 */
+    grid-row: 1 / 2;    /* Fila 1 */
+}
+
+.hero-images .bottom-large {
+    grid-column: 1 / 3; /* Abarca ambas columnas */
+    grid-row: 2 / 3;    /* Fila 2 */
+}
+
+/* SOCIAL MEDIA SECTION */
+.social-media-section {
+    background-color: var(--primary-pink); /* Fondo rosa vibrante */
+    color: var(--light-text);
+    text-align: center;
+    padding: 25px 5%;
+    font-size: 1.4em; /* Tamaño de fuente para el texto "Síguenos en..." */
+    font-weight: 400;
+}
+
+/* CONTACT AND HOURS SECTION */
+.info-section {
+    display: grid;
+    grid-template-columns: 1fr 1.5fr; /* Info a la izquierda, mapa a la derecha */
+    gap: 40px;
+    padding: 60px 5%;
+    background-color: #fff; /* Fondo de la sección blanca */
+}
+
+.contact-hours-container {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.contact-info {
+    background-color: var(--light-pink); /* Fondo rosa claro para el bloque de contacto */
+    padding: 30px;
+    border-radius: var(--border-radius-lg);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.contact-info .small-logo {
+    width: 80px; /* Tamaño del logo pequeño dentro de la info de contacto */
+    margin-bottom: 20px;
+}
+
+.contact-info h2 {
+    font-size: 1.5em;
+    color: var(--primary-pink);
     margin-bottom: 15px;
+    font-weight: 700;
 }
 
-footer {
-    background: #ffd7e7;
+.contact-info ul {
+    margin-bottom: 25px;
+}
+
+.contact-info ul li {
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 10px;
+    color: var(--grey-text);
+}
+
+.contact-info ul li i {
+    color: var(--primary-pink);
+    margin-right: 10px;
+    margin-top: 3px; /* Alinea el ícono con el texto */
+}
+
+.contact-info p i {
+    color: var(--primary-pink);
+    margin-right: 10px;
+}
+
+.hours-info {
+    background-color: #fff; /* Fondo blanco para el bloque de horarios */
+    padding: 30px;
+    border-radius: var(--border-radius-lg);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.05); /* Sombra más suave */
+}
+
+.hours-info h3 {
+    font-size: 1.3em;
+    color: var(--primary-pink);
+    margin-bottom: 8px;
+    font-weight: 700;
+}
+
+.hours-info p {
+    color: var(--grey-text);
+    margin-bottom: 20px;
+}
+
+.map-container {
+    background-color: #e0e0e0; /* Fondo gris para el mapa antes de cargar */
+    border-radius: var(--border-radius-lg);
+    overflow: hidden; /* Asegura que el iframe no se desborde */
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+
+.map-container iframe {
+    width: 100%;
+    height: 100%;
+    min-height: 400px; /* Altura mínima del mapa para visibilidad */
+    border: 0;
+}
+
+/* FOOTER */
+.main-footer {
+    background-color: var(--dark-text); /* Fondo oscuro para el footer */
+    color: var(--light-text);
     text-align: center;
     padding: 20px;
+    font-size: 0.9em;
+}
+
+/* MEDIA QUERIES FOR RESPONSIVENESS */
+@media (max-width: 992px) {
+    .hero-section {
+        grid-template-columns: 1fr; /* Una columna para el hero en tabletas */
+        text-align: center;
+    }
+
+    .hero-images {
+        margin-top: 30px; /* Espacio entre el contenido y las imágenes */
+        grid-template-columns: 1fr; /* Apila las imágenes */
+    }
+
+    .hero-images .top-left,
+    .hero-images .top-right,
+    .hero-images .bottom-large {
+        grid-column: 1 / 2; /* Todas ocupan la misma columna */
+        grid-row: auto; /* Dejan que el grid las posicione automáticamente */
+    }
+
+    .info-section {
+        grid-template-columns: 1fr; /* Una columna para la info y el mapa en tabletas */
+    }
+
+    .map-container {
+        height: 350px; /* Altura fija para el mapa en tabletas */
+    }
 }
 
 @media (max-width: 768px) {
-    header {
+    .main-header {
+        flex-wrap: wrap; /* Permite que los elementos se envuelvan */
+        justify-content: center; /* Centra el logo */
+        padding: 15px 20px;
+    }
+
+    .main-nav {
+        width: 100%; /* La navegación ocupa todo el ancho */
+        order: 3; /* Mueve la navegación al final visualmente */
+    }
+
+    .main-nav .nav-list {
+        display: none; /* Oculta la navegación por defecto en móviles */
         flex-direction: column;
+        width: 100%;
+        background-color: var(--light-pink);
+        position: absolute;
+        top: 80px; /* Ajusta según la altura de tu header */
+        left: 0;
+        padding: 20px 0;
+        box-shadow: 0 5px 10px rgba(0,0,0,0.1);
         text-align: center;
     }
-    nav ul {
-        flex-direction: column;
-        gap: 10px;
+
+    .main-nav .nav-list.active {
+        display: flex; /* Muestra la navegación cuando tiene la clase 'active' */
     }
-    .hero {
-        height: 60vh;
+
+    .main-nav .nav-list li {
+        margin: 10px 0;
     }
-    .destacados {
-        padding: 30px 10px;
+
+    .hamburger-menu {
+        display: block; /* Muestra el menú de hamburguesa en móviles */
+        position: absolute; /* Posiciona el botón de hamburguesa */
+        right: 20px;
+        top: 20px;
     }
-}
-    .hero {
+
+    /* Animación del menú de hamburguesa */
+    .hamburger-menu.active .bar:nth-child(1) {
+        transform: translateY(8px) rotate(45deg);
+    }
+
+    .hamburger-menu.active .bar:nth-child(2) {
+        opacity: 0;
+    }
+
+    .hamburger-menu.active .bar:nth-child(3) {
+        transform: translateY(-8px) rotate(-45deg);
+    }
+
+    .hero-quote {
+        font-size: 1.5em; /* Reduce el tamaño de la cita */
+    }
+
+    .reserve-button {
+        padding: 12px 25px; /* Reduce el padding del botón */
+        font-size: 1em;
+    }
+
+    .social-media-section {
+        font-size: 1.2em; /* Reduce el tamaño del texto social */
         padding: 20px;
+    }
+
+    .contact-info, .hours-info {
+        padding: 20px; /* Reduce el padding de las cajas de información */
+    }
+
+    .contact-info h2, .hours-info h3 {
+        font-size: 1.3em; /* Reduce el tamaño de los títulos */
+    }
+
+    .map-container {
+        min-height: 300px; /* Altura mínima para el mapa en móviles */
     }
 }
 
+@media (max-width: 480px) {
+    /* Ajustes finos para móviles muy pequeños */
+    .main-header {
+        padding: 10px;
+    }
+
+    .hero-logo {
+        width: 120px;
+    }
+
+    .hero-quote {
+        font-size: 1.3em;
+    }
+
+    .reserve-button {
+        padding: 10px 20px;
+        font-size: 0.9em;
+    }
+
+    .contact-info ul li {
+        font-size: 0.9em;
+    }
+
+    .hours-info p {
+        font-size: 0.9em;
+    }
+}
