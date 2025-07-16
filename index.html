@@ -8,57 +8,98 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 <body>
-<header>
+<header class="main-header">
     <div class="logo">
-        <img src="images/logo.png" alt="Logo Hana no Yoru">
+        <img src="images/logo_cicular.png" alt="Logo Hana no Yoru">
         <h1>🌸 Hana no Yoru Café</h1>
     </div>
-    <nav>
+    <nav class="main-nav">
         <ul>
-            <li><a href="index.html">Inicio</a></li>
-            <li><a href="acerca.html">Acerca</a></li>
-            <li><a href="reservacion.html">Reservación</a></li>
-            <li><a href="postres.html">Postres</a></li>
-            <li><a href="bebidas.html">Bebidas</a></li>
-            <li><a href="galeria.html">Galería</a></li>
-            <li><a href="sucursales.html">Sucursales</a></li>
-            <li><a href="servicios.html">Servicios</a></li>
-        </ul>
-    </nav>
-</header>
+            <button class="hamburger-menu" aria-label="Abrir menú de navegación">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </button>
+            <ul class="nav-list">
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="acerca.html">Acerca</a></li>
+                <li><a href="reservacion.html">Reservación</a></li>
+                <li><a href="postres.html">Postres</a></li>
+                <li><a href="bebidas.html">Bebidas</a></li>
+                <li><a href="galeria.html">Galería</a></li>
+                <li><a href="sucursales.html">Sucursales</a></li>
+                <li><a href="servicios.html">Servicios</a></li>
+            </ul>
+        </nav>
+    </header>
+    
 <main>
-<section class="hero">
-    <div class="hero-content">
-        <h2>“Cada sorbo, una flor bajo la luna.”</h2>
-        <p>Una experiencia nocturna japonesa con cada taza servida.</p>
-        <a href="reservacion.html" class="boton">Reserva Ahora</a>
-    </div>
-</section>
-<section class="destacados">
-    <h2>Recomendaciones de la Casa</h2>
-    <div class="cards">
-        <div class="card">
-            <img src="images/latte-lavanda.jpg" alt="Latte de Lavanda">
-            <h3>Latte de Lavanda</h3>
-            <p>Relájate con la suavidad de la lavanda y una textura cremosa única.</p>
-        </div>
-        <div class="card">
-            <img src="images/tarta-yuzu.jpg" alt="Tarta de Yuzu">
-            <h3>Tarta de Yuzu</h3>
-            <p>Refrescante mousse con cítricos japoneses y decoración minimalista.</p>
-        </div>
-        <div class="card">
-            <img src="images/matcha-tonic.jpg" alt="Matcha Tonic">
-            <h3>Matcha Tonic</h3>
-            <p>Una mezcla perfecta entre lo amargo del matcha y el toque efervescente del tónico.</p>
-        </div>
-    </div>
-</section>
-</main>
-<footer>
-    <p>© 2025 Hana no Yoru Café. Todos los derechos reservados.</p>
-</footer>
+        <section class="hero-section">
+            <div class="hero-content">
+                <img src="images/logo_circular_hero.png" alt="Logo Hana no Yoru Café" class="hero-logo">
+                <p class="hero-quote">“Cada sorbo, una flor bajo la luna.”</p>
+                <button class="reserve-button">Hacer reserva</button>
+            </div>
+            <div class="hero-images">
+                <div class="image-wrapper top-left">
+                    <img src="images/hero_top_left.jpg" alt="Café en tazas">
+                </div>
+                <div class="image-wrapper top-right">
+                    <img src="images/hero_top_right.jpg" alt="Bebida refrescante">
+                </div>
+                <div class="image-wrapper bottom-large">
+                    <img src="images/hero_bottom_large.jpg" alt="Café y postre">
+                </div>
+            </div>
+        </section>
+
+        <section class="social-media-section">
+            <p>Síguenos en Facebook y en Instagram</p>
+            </section>
+
+        <section class="info-section">
+            <div class="contact-hours-container">
+                <div class="contact-info">
+                    <img src="images/small_logo.png" alt="Small Hana no Yoru Logo" class="small-logo">
+                    <h2>Visítanos:</h2>
+                    <ul>
+                        <li><i class="fas fa-map-marker-alt"></i> Marsella 39, Colonia Juárez</li>
+                        <li><i class="fas fa-map-marker-alt"></i> Av. Peter Barros Sierra 540</li>
+                        <li><i class="fas fa-map-marker-alt"></i> Cedro 71, San Rafael</li>
+                    </ul>
+                    <h2>Contacto:</h2>
+                    <p><i class="fas fa-envelope"></i> hananoyorucafe@gmail.com</p>
+                </div>
+                <div class="hours-info">
+                    <div class="hours-block">
+                        <h3>Lunes - Jueves</h3>
+                        <p>11:30 - 14:30, 18:00 - 22:30</p>
+                    </div>
+                    <div class="hours-block">
+                        <h3>Viernes y Sábados</h3>
+                        <p>11:00 - 14:00, 18:00 - 22:30</p>
+                    </div>
+                    <div class="hours-block">
+                        <h3>Domingos</h3>
+                        <p>11:00 - 14:00</p>
+                    </div>
+                </div>
+            </div>
+            <div class="map-container">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3762.6934484084283!2d-99.1729099858971!3d19.43260788688172!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x85d1ff36081e79df%3A0x673c68e0d61b6e4e!2sCDMX!5e0!3m2!1ses-419!2smx!4v1678901234567!5m2!1ses-419!2smx"
+                        width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+        </section>
+    </main>
+
+    <footer class="main-footer">
+        <p>© 2025 Hana no Yoru Café. Todos los derechos reservados.</p>
+    </footer>
+    
+    <script src="script.js" defer></script>
+    
 </body>
 </html>
