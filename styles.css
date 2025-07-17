@@ -299,6 +299,154 @@ img {
     font-size: 0.9em;
 }
 
+/* --- Acerca de nosotros Page Specific Styles --- */
+
+/* ABOUT HERO BANNER SECTION */
+.about-hero-banner {
+    background-image: url('images/about_banner.jpg'); /* Imagen de fondo para el banner */
+    background-size: cover;
+    background-position: center;
+    height: 400px; /* Altura fija para el banner */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: var(--light-text); /* Texto blanco sobre la imagen */
+    position: relative; /* Necesario para el overlay */
+}
+
+/* Oscurece la imagen ligeramente para que el texto resalte */
+.about-hero-banner::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.4); /* Capa oscura semitransparente */
+    z-index: 1;
+}
+
+.hero-text-overlay {
+    z-index: 2; /* Asegura que el texto esté sobre el overlay */
+}
+
+.about-hero-banner h1 {
+    font-family: 'Pacifico', cursive; /* Fuente del logo */
+    font-size: 3.5em; /* Tamaño del título "Sobre nosotros" */
+    color: var(--light-text);
+    margin-bottom: 10px;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.5); /* Sombra para mejor lectura */
+}
+
+.about-hero-banner .subtitle {
+    font-family: 'Roboto', sans-serif; /* Puedes usar Roboto o Pacifico según prefieras */
+    font-size: 1.2em;
+    margin-bottom: 25px;
+    color: var(--light-text);
+    font-weight: 300;
+}
+
+.history-button {
+    background-color: var(--button-bg); /* Reutiliza el color del botón del hero de la homepage */
+    color: var(--button-text);
+    padding: 12px 25px;
+    border: none;
+    border-radius: var(--border-radius-sm);
+    font-size: 1.0em;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+.history-button:hover {
+    background-color: #d15a86; /* Tono más oscuro al pasar el mouse */
+}
+
+/* MISSION, VISION, VALUES SECTION */
+.mvv-section {
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-start; /* Alinea los ítems a la parte superior */
+    padding: 60px 5%;
+    background-color: var(--light-pink); /* Fondo rosa claro */
+    gap: 30px; /* Espacio entre los bloques */
+    flex-wrap: wrap; /* Permite que los ítems se envuelvan en pantallas pequeñas */
+}
+
+.mvv-item {
+    flex: 1; /* Permite que cada ítem tome espacio disponible */
+    min-width: 280px; /* Ancho mínimo para cada ítem */
+    max-width: 350px; /* Ancho máximo para evitar que se estiren demasiado */
+    text-align: center;
+    background-color: #fff;
+    padding: 30px;
+    border-radius: var(--border-radius-lg);
+    box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+}
+
+.mvv-item i {
+    font-size: 3em; /* Tamaño de los iconos */
+    color: var(--primary-pink);
+    margin-bottom: 20px;
+}
+
+.mvv-item h3 {
+    font-size: 1.8em;
+    color: var(--dark-text);
+    margin-bottom: 15px;
+    font-weight: 700;
+}
+
+.mvv-item p {
+    color: var(--grey-text);
+    font-size: 0.95em;
+    line-height: 1.7;
+}
+
+/* HISTORY SECTION */
+.history-section {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* Texto a la izquierda, imagen a la derecha */
+    gap: 50px; /* Espacio entre el texto y la imagen */
+    padding: 60px 5%;
+    background-color: #fff; /* Fondo blanco */
+    align-items: center; /* Centra verticalmente el contenido */
+}
+
+.history-content {
+    padding-right: 20px; /* Pequeño padding a la derecha del texto */
+}
+
+.history-content h2 {
+    font-family: 'Pacifico', cursive; /* Fuente para el título "Historia" */
+    font-size: 2.8em;
+    color: var(--primary-pink);
+    margin-bottom: 25px;
+    line-height: 1.2;
+}
+
+.history-content p {
+    font-size: 1.1em;
+    color: var(--dark-text);
+    line-height: 1.8;
+}
+
+.history-image {
+    border-radius: var(--border-radius-lg);
+    overflow: hidden; /* Asegura que la imagen respete el borde redondeado */
+    box-shadow: 0 5px 15px rgba(0,0,0,0.15); /* Sombra para la imagen */
+}
+
+.history-image img {
+    width: 100%;
+    height: auto;
+    display: block;
+    object-fit: cover;
+}
+
 /* MEDIA QUERIES FOR RESPONSIVENESS */
 @media (max-width: 992px) {
     .hero-section {
@@ -324,6 +472,28 @@ img {
 
     .map-container {
         height: 350px; /* Altura fija para el mapa en tabletas */
+    }
+}
+
+.mvv-section {
+        flex-direction: column; /* Apila los ítems de MVV en tabletas */
+        align-items: center;
+    }
+
+    .mvv-item {
+        margin-bottom: 30px; /* Espacio entre ítems apilados */
+        min-width: unset; /* Quita el min-width para que se ajuste mejor */
+        width: 80%; /* Ancho para los ítems apilados */
+    }
+
+    .history-section {
+        grid-template-columns: 1fr; /* Apila el texto y la imagen en tabletas */
+        text-align: center;
+    }
+
+    .history-content {
+        padding-right: 0;
+        margin-bottom: 30px; /* Espacio entre texto e imagen apilados */
     }
 }
 
@@ -407,6 +577,40 @@ img {
     }
 }
 
+about-hero-banner {
+        height: 300px; /* Reduce la altura del banner en móviles */
+    }
+
+    .about-hero-banner h1 {
+        font-size: 2.5em;
+    }
+
+    .about-hero-banner .subtitle {
+        font-size: 1em;
+    }
+
+    .mvv-item {
+        width: 95%; /* Más ancho en móviles pequeños */
+        padding: 20px;
+    }
+
+    .mvv-item i {
+        font-size: 2.5em;
+    }
+
+    .mvv-item h3 {
+        font-size: 1.5em;
+    }
+
+    .history-content h2 {
+        font-size: 2em;
+    }
+
+    .history-content p {
+        font-size: 1em;
+    }
+}
+
 @media (max-width: 480px) {
     /* Ajustes finos para móviles muy pequeños */
     .main-header {
@@ -432,5 +636,14 @@ img {
 
     .hours-info p {
         font-size: 0.9em;
+    }
+}
+
+.about-hero-banner {
+        height: 250px;
+    }
+
+    .about-hero-banner h1 {
+        font-size: 2em;
     }
 }
