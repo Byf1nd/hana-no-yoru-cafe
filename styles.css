@@ -653,6 +653,185 @@ img {
     background-color: #d15a86;
 }
 
+/* --- DESSERTS PAGE SPECIFIC STYLES --- */
+
+/* Hero Banner for Desserts Page (similar to About page) */
+.desserts-hero-banner {
+    background-image: url('images/desserts_banner.jpg'); /* O una imagen relevante para postres */
+    background-size: cover;
+    background-position: center;
+    height: 300px; /* Altura un poco menor que el banner de "Acerca de" */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: var(--light-text);
+    position: relative;
+}
+
+.desserts-hero-banner::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.3); /* Ligeramente más claro que el de About si quieres */
+    z-index: 1;
+}
+
+.desserts-hero-banner h1 {
+    font-family: 'Pacifico', cursive;
+    font-size: 3em;
+    color: var(--light-text);
+    margin-bottom: 10px;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+    z-index: 2;
+}
+
+/* Dessert Category Section (Container for carousel) */
+.dessert-category-section {
+    padding: 60px 5%;
+    background-color: #fcfcfc; /* Fondo blanco para las secciones de postres */
+}
+
+.dessert-category-section h2 {
+    font-family: 'Pacifico', cursive;
+    font-size: 2.5em;
+    color: var(--primary-pink);
+    text-align: center;
+    margin-bottom: 40px;
+    position: relative;
+}
+
+/* Line under category title */
+.dessert-category-section h2::after {
+    content: '';
+    display: block;
+    width: 80px;
+    height: 3px;
+    background-color: var(--primary-pink);
+    margin: 15px auto 0 auto;
+    border-radius: 2px;
+}
+
+/* Carousel Container (Wrapper for content and nav buttons) */
+.carousel-container {
+    display: flex;
+    align-items: center;
+    position: relative;
+    margin: 0 auto;
+    max-width: 1200px; /* Ancho máximo del carrusel */
+}
+
+/* Carousel Content (The scrollable part) */
+.carousel-content {
+    display: flex;
+    overflow-x: scroll; /* Permite el scroll horizontal */
+    scroll-behavior: smooth; /* Desplazamiento suave al hacer clic en los botones */
+    -webkit-overflow-scrolling: touch; /* Mejora el scroll en iOS */
+    padding: 20px 0; /* Padding vertical para espacio de sombra de tarjetas */
+    gap: 30px; /* Espacio entre las tarjetas */
+    /* Hide scrollbar for aesthetic purposes */
+    scrollbar-width: none; /* Firefox */
+    -ms-overflow-style: none;  /* IE and Edge */
+}
+
+.carousel-content::-webkit-scrollbar {
+    display: none; /* Chrome, Safari, Opera */
+}
+
+/* Carousel Navigation Buttons */
+.carousel-nav-btn {
+    background-color: rgba(255, 255, 255, 0.8);
+    border: none;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    font-size: 1.5em;
+    color: var(--primary-pink);
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 10;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.carousel-nav-btn:hover {
+    background-color: var(--primary-pink);
+    color: white;
+    transform: translateY(-50%) scale(1.1);
+}
+
+.carousel-nav-btn.prev-btn {
+    left: -25px; /* Ajusta la posición para que el botón esté un poco fuera */
+}
+
+.carousel-nav-btn.next-btn {
+    right: -25px; /* Ajusta la posición para que el botón esté un poco fuera */
+}
+
+/* Dessert Card Styling */
+.dessert-card {
+    flex: 0 0 auto; /* No crecer, no encoger, base es el contenido */
+    width: 300px; /* Ancho fijo para cada tarjeta de postre */
+    background-color: var(--light-pink); /* Fondo rosa claro para la tarjeta */
+    border-radius: var(--border-radius-lg);
+    overflow: hidden; /* Asegura que la imagen respete el borde */
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.2s ease;
+}
+
+.dessert-card:hover {
+    transform: translateY(-5px); /* Pequeño efecto hover */
+}
+
+.dessert-card img {
+    width: 100%;
+    height: 200px; /* Altura fija para la imagen del postre */
+    object-fit: cover; /* Asegura que la imagen cubra el espacio */
+    border-bottom: 2px solid var(--primary-pink); /* Borde debajo de la imagen */
+}
+
+.dessert-card .card-info {
+    padding: 20px;
+    text-align: center;
+    flex-grow: 1; /* Permite que la información crezca */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; /* Espacia el contenido */
+}
+
+.dessert-card .card-info h3 {
+    font-size: 1.4em;
+    color: var(--dark-text);
+    margin-bottom: 10px;
+    font-weight: 700;
+}
+
+.dessert-card .card-info p {
+    font-size: 0.95em;
+    color: var(--grey-text);
+    line-height: 1.5;
+    margin-bottom: 15px;
+}
+
+.dessert-card .card-info .price {
+    font-size: 1.2em;
+    font-weight: 700;
+    color: var(--primary-pink);
+    margin-top: auto; /* Empuja el precio hacia abajo si hay espacio extra */
+}
+
+
 /* DISEÑO RESPONSIVO */
 @media (max-width: 992px) {
     .hero-section {
@@ -918,5 +1097,95 @@ about-hero-banner {
         padding: 6px 10px;
         font-size: 0.8em;
         min-width: 35px;
+    }
+}
+
+@media (max-width: 992px) {
+    .desserts-hero-banner {
+        height: 250px;
+    }
+    .desserts-hero-banner h1 {
+        font-size: 2.5em;
+    }
+    .carousel-container {
+        max-width: 90%; /* Ajusta el ancho para tabletas */
+    }
+    .carousel-nav-btn {
+        width: 40px;
+        height: 40px;
+        font-size: 1.2em;
+        left: 0px; /* Ajusta la posición en tabletas */
+        right: 0px;
+    }
+    .dessert-card {
+        width: 280px; /* Ligeramente más pequeña */
+    }
+}
+
+@media (max-width: 768px) {
+    .desserts-hero-banner {
+        height: 200px;
+    }
+    .desserts-hero-banner h1 {
+        font-size: 2em;
+    }
+    .dessert-category-section {
+        padding: 40px 20px;
+    }
+    .dessert-category-section h2 {
+        font-size: 2em;
+        margin-bottom: 30px;
+    }
+    .carousel-container {
+        max-width: 100%; /* Ocupa todo el ancho disponible */
+        padding: 0 40px; /* Padding interno para que los botones no se salgan */
+    }
+    .carousel-nav-btn {
+        top: calc(50% + 20px); /* Ajusta posición si el padding del carousel-content es 20px */
+        transform: translateY(-50%);
+        width: 35px;
+        height: 35px;
+        font-size: 1em;
+    }
+    .dessert-card {
+        width: 260px; /* Más pequeña para móviles */
+    }
+    .dessert-card img {
+        height: 180px;
+    }
+}
+
+@media (max-width: 480px) {
+    .desserts-hero-banner {
+        height: 180px;
+    }
+    .desserts-hero-banner h1 {
+        font-size: 1.8em;
+    }
+    .dessert-category-section h2 {
+        font-size: 1.8em;
+    }
+    .carousel-container {
+        padding: 0 30px; /* Reduce aún más el padding */
+    }
+    .carousel-nav-btn {
+        width: 30px;
+        height: 30px;
+        font-size: 0.9em;
+    }
+    .dessert-card {
+        width: 240px; /* Ancho para móviles más pequeños */
+    }
+    .dessert-card img {
+        height: 160px;
+    }
+    .dessert-card .card-info h3 {
+        font-size: 1.2em;
+    }
+    .dessert-card .card-info p {
+        font-size: 0.85em;
+    }
+    .dessert-card .card-info .price {
+        font-size: 1.1em;
     }
 }
