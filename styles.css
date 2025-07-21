@@ -447,6 +447,212 @@ img {
     object-fit: cover;
 }
 
+/* --- RESERVATION PAGE STYLES --- */
+
+.reservation-section,
+.confirmation-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: calc(100vh - var(--header-height, 80px) - var(--footer-height, 60px)); /* Altura ajustable */
+    padding: 40px 5%;
+    background-color: var(--light-pink); /* Fondo rosa claro */
+}
+
+.reservation-card,
+.confirmation-card {
+    background-color: #fff;
+    padding: 40px;
+    border-radius: var(--border-radius-lg);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+    max-width: 500px; /* Ancho máximo para el formulario/confirmación */
+    width: 100%;
+    text-align: center; /* Centra el texto y el logo en la confirmación */
+}
+
+.reservation-card h2 {
+    font-family: 'Pacifico', cursive;
+    font-size: 2.2em;
+    color: var(--primary-pink);
+    margin-bottom: 30px;
+}
+
+/* Form Steps Styling */
+.form-step {
+    border: 1px solid #eee;
+    padding: 25px;
+    margin-bottom: 25px;
+    border-radius: var(--border-radius-sm);
+    text-align: left; /* Alinea el contenido de los pasos a la izquierda */
+    position: relative;
+    background-color: #fcfcfc;
+}
+
+.form-step .step-number {
+    position: absolute;
+    top: -15px;
+    left: 20px;
+    background-color: var(--primary-pink);
+    color: white;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: 700;
+    font-size: 1.1em;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}
+
+.form-step h3 {
+    font-size: 1.4em;
+    color: var(--dark-text);
+    margin-bottom: 20px;
+    margin-left: 40px; /* Espacio para el número de paso */
+}
+
+/* Guest and Duration Selectors */
+.guests-selector,
+.duration-selector,
+.time-slots {
+    display: flex;
+    flex-wrap: wrap; /* Permite que los botones se envuelvan */
+    gap: 10px; /* Espacio entre los botones */
+    justify-content: center; /* Centra los botones */
+    margin-top: 15px;
+}
+
+.guest-btn,
+.duration-btn,
+.time-slot-btn {
+    background-color: #f0f0f0;
+    color: var(--dark-text);
+    padding: 10px 15px;
+    border: 1px solid #ddd;
+    border-radius: var(--border-radius-sm);
+    cursor: pointer;
+    font-size: 1em;
+    transition: all 0.2s ease;
+    min-width: 50px; /* Ancho mínimo para los botones */
+}
+
+.guest-btn.active,
+.duration-btn.active,
+.time-slot-btn.active {
+    background-color: var(--primary-pink);
+    color: white;
+    border-color: var(--primary-pink);
+    transform: translateY(-2px);
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}
+
+.guest-btn:hover,
+.duration-btn:hover,
+.time-slot-btn:hover {
+    background-color: var(--primary-pink);
+    color: white;
+    border-color: var(--primary-pink);
+}
+
+/* Date Input */
+#reservation-date {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: var(--border-radius-sm);
+    font-size: 1em;
+    margin-bottom: 20px;
+    appearance: none; /* Elimina estilos nativos del navegador */
+    -webkit-appearance: none;
+    -moz-appearance: none;
+}
+
+/* Contact Information Inputs */
+.contact-inputs {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.contact-inputs input[type="text"],
+.contact-inputs input[type="email"] {
+    width: 100%;
+    padding: 12px 15px;
+    border: 1px solid #ddd;
+    border-radius: var(--border-radius-sm);
+    font-size: 1em;
+    transition: border-color 0.2s ease;
+}
+
+.contact-inputs input[type="text"]:focus,
+.contact-inputs input[type="email"]:focus {
+    outline: none;
+    border-color: var(--primary-pink);
+    box-shadow: 0 0 0 3px rgba(var(--primary-pink-rgb), 0.2); /* Sombra de enfoque */
+}
+
+/* Submit Button */
+.submit-reservation-btn {
+    background-color: var(--button-bg);
+    color: var(--button-text);
+    padding: 15px 30px;
+    border: none;
+    border-radius: var(--border-radius-sm);
+    font-size: 1.1em;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    font-weight: 700;
+    margin-top: 30px;
+    width: 100%; /* El botón ocupa todo el ancho de la tarjeta */
+}
+
+.submit-reservation-btn:hover {
+    background-color: #d15a86;
+    transform: translateY(-2px);
+}
+
+/* Confirmation Section Styles */
+.confirmation-section.hidden {
+    display: none; /* Oculta la sección de confirmación por defecto */
+}
+
+.confirmation-card .confirmation-logo {
+    width: 120px; /* Tamaño del logo en la confirmación */
+    height: auto;
+    margin: 0 auto 30px auto; /* Centra el logo */
+}
+
+.confirmation-card h2 {
+    font-family: 'Pacifico', cursive;
+    font-size: 2em;
+    color: var(--primary-pink);
+    margin-bottom: 15px;
+}
+
+.confirmation-card p {
+    font-size: 1.1em;
+    color: var(--dark-text);
+    margin-bottom: 30px;
+    line-height: 1.6;
+}
+
+.back-to-home-btn {
+    background-color: var(--button-bg);
+    color: var(--button-text);
+    padding: 12px 25px;
+    border: none;
+    border-radius: var(--border-radius-sm);
+    font-size: 1em;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    font-weight: 700;
+}
+
+.back-to-home-btn:hover {
+    background-color: #d15a86;
+}
+
 /* DISEÑO RESPONSIVO */
 @media (max-width: 992px) {
     .hero-section {
@@ -645,5 +851,72 @@ about-hero-banner {
 
     .about-hero-banner h1 {
         font-size: 2em;
+    }
+}
+
+@media (max-width: 768px) {
+    .reservation-card,
+    .confirmation-card {
+        padding: 30px;
+    }
+
+    .reservation-card h2 {
+        font-size: 1.8em;
+    }
+
+    .form-step {
+        padding: 20px;
+    }
+
+    .form-step h3 {
+        font-size: 1.2em;
+        margin-left: 30px;
+    }
+
+    .guest-btn,
+    .duration-btn,
+    .time-slot-btn {
+        padding: 8px 12px;
+        font-size: 0.9em;
+        min-width: 40px;
+    }
+
+    .submit-reservation-btn {
+        padding: 12px 25px;
+        font-size: 1em;
+    }
+
+    .confirmation-card h2 {
+        font-size: 1.8em;
+    }
+
+    .confirmation-card p {
+        font-size: 1em;
+    }
+}
+
+@media (max-width: 480px) {
+    .reservation-card,
+    .confirmation-card {
+        padding: 20px;
+    }
+
+    .form-step h3 {
+        font-size: 1.1em;
+        margin-left: 25px;
+    }
+    .form-step .step-number {
+        width: 25px;
+        height: 25px;
+        font-size: 0.9em;
+        top: -12px;
+        left: 15px;
+    }
+    .guest-btn,
+    .duration-btn,
+    .time-slot-btn {
+        padding: 6px 10px;
+        font-size: 0.8em;
+        min-width: 35px;
     }
 }
