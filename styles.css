@@ -447,7 +447,7 @@ img {
     object-fit: cover;
 }
 
-/* MEDIA QUERIES FOR RESPONSIVENESS */
+/* DISEÑO RESPONSIVO */
 @media (max-width: 992px) {
     .hero-section {
         grid-template-columns: 1fr; /* Una columna para el hero en tabletas */
