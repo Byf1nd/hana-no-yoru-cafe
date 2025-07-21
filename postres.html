@@ -2,45 +2,172 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Postres | Hana no Yoru Café</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 <body>
-<header>
-    <h1>Postres</h1>
-    <nav>
-        <ul>
-            <li><a href="index.html">Inicio</a></li>
-            <li><a href="postres.html">Postres</a></li>
-        </ul>
-    </nav>
-</header>
-<main>
-    <section>
-        <h2>Menú de Postres</h2>
-        <ul class="menu">
-            <li>
-                <h3>Tarta de mousse de yuzu</h3>
-                <p>Un postre cítrico y refrescante con delicadas notas florales.</p>
-            </li>
-            <li>
-                <h3>Gâteau de matcha y vainilla</h3>
-                <p>Suave combinación del té verde matcha con la dulzura de la vainilla.</p>
-            </li>
-            <li>
-                <h3>Helado artesanal de arroz dulce</h3>
-                <p>Postre fresco, cremoso, elaborado a partir de arroz tradicional japonés.</p>
-            </li>
-            <li>
-                <h3>Kanten de flor de cerezo</h3>
-                <p>Gelatina ligera a base de agar con pétalos de sakura.</p>
-            </li>
-        </ul>
-    </section>
-</main>
-<footer>
-    <p>© 2025 Hana no Yoru Café. Todos los derechos reservados.</p>
-</footer>
+    <header class="main-header">
+        <div class="logo">
+            <img src="images/logo_circular.png" alt="Logo Hana no Yoru Café">
+        </div>
+        <nav class="main-nav">
+            <button class="hamburger-menu" aria-label="Abrir menú de navegación">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </button>
+            <ul class="nav-list">
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="acerca.html">Acerca</a></li>
+                <li><a href="reservacion.html">Reservación</a></li>
+                <li><a href="postres.html">Postres</a></li>
+                <li><a href="bebidas.html">Bebidas</a></li>
+                <li><a href="galeria.html">Galería</a></li>
+                <li><a href="sucursales.html">Sucursales</a></li>
+                <li><a href="servicios.html">Servicios</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="desserts-hero-banner">
+            <div class="hero-text-overlay">
+                <h1>Postres</h1>
+                </div>
+            </section>
+
+        <section class="dessert-category-section">
+            <h2>Postres</h2>
+            <div class="carousel-container">
+                <button class="carousel-nav-btn prev-btn" data-target="main-desserts-carousel"><i class="fas fa-chevron-left"></i></button>
+                <div class="carousel-content" id="main-desserts-carousel">
+                    <div class="dessert-card">
+                        <img src="images/tarta_de_mousse_de_yuzu.png" alt="Tarta de mousse de yuzu">
+                        <div class="card-info">
+                            <h3>Tarta de mousse de yuzu</h3>
+                            <p>Suave y cremosa, con el toque cítrico y refrescante del yuzu japonés.</p>
+                            <span class="price">$95.00</span>
+                        </div>
+                    </div>
+                    <div class="dessert-card">
+                        <img src="images/helado_artesanal.png" alt="Helado artesanal de arroz dulce">
+                        <div class="card-info">
+                            <h3>Helado artesanal de arroz dulce</h3>
+                            <p>Cremoso helado inspirado en el clásico mochi con un delicado sabor a arroz dulce..</p>
+                            <span class="price">$85.00</span>
+                        </div>
+                    </div>
+                    <div class="dessert-card">
+                        <img src="images/gateau_de_matcha.png" alt="Gâteau de matcha y vainilla">
+                        <div class="card-info">
+                            <h3>Gâteau de matcha y vainilla</h3>
+                            <p>Esponjoso pastel que equilibra la intensidad del matcha con la dulzura de la vainilla.</p>
+                            <span class="price">$90.00</span>
+                        </div>
+                    </div>
+                    <div class="dessert-card">
+                        <img src="images/kanten_flor_de_cerezo.png" alt="Kanten de flor de cerezo">
+                        <div class="card-info">
+                            <h3>Kanten de flor de cerezo</h3>
+                            <p>Gelatina tradicional japoneda con aroma sutil a sakura, ligera y refrescante.</p>
+                            <span class="price">$80.00</span>
+                        </div>
+                    </div>
+                </div>
+                <button class="carousel-nav-btn next-btn" data-target="main-desserts-carousel"><i class="fas fa-chevron-right"></i></button>
+            </div>
+        </section>
+
+        <section class="dessert-category-section">
+            <h2>De temporada</h2>
+            <div class="carousel-container">
+                <button class="carousel-nav-btn prev-btn" data-target="seasonal-desserts-carousel"><i class="fas fa-chevron-left"></i></button>
+                <div class="carousel-content" id="seasonal-desserts-carousel">
+                    <div class="dessert-card">
+                        <img src="images/matcha-vainilla.jpg" alt="Gâteau de matcha y vainilla">
+                        <div class="card-info">
+                            <h3>Gâteau de matcha y vainilla</h3>
+                            <p>Exquisita tarta que equilibra lo amargo del matcha con la dulzura de la vainilla.</p>
+                            <span class="price">$90.00</span>
+                        </div>
+                    </div>
+                    <div class="dessert-card">
+                        <img src="images/kanten-sakura.jpg" alt="Kanten de flor de cerezo">
+                        <div class="card-info">
+                            <h3>Kanten de flor de cerezo</h3>
+                            <p>Gelatina tradicional japonesa con aroma sutil a sakura, ligera y refrescante.</p>
+                            <span class="price">$80.00</span>
+                        </div>
+                    </div>
+                    <div class="dessert-card">
+                        <img src="images/seasonal-extra-1.jpg" alt="Postre de Temporada Extra 1">
+                        <div class="card-info">
+                            <h3>Parfait de Fresa y Matcha</h3>
+                            <p>Capas de fresas frescas, crema de matcha y crujiente granola.</p>
+                            <span class="price">$75.00</span>
+                        </div>
+                    </div>
+                    <div class="dessert-card">
+                        <img src="images/seasonal-extra-2.jpg" alt="Postre de Temporada Extra 2">
+                        <div class="card-info">
+                            <h3>Kakigori de Yuzu</h3>
+                            <p>Hielo raspado con sirope de yuzu y mochis pequeños.</p>
+                            <span class="price">$65.00</span>
+                        </div>
+                    </div>
+                </div>
+                <button class="carousel-nav-btn next-btn" data-target="seasonal-desserts-carousel"><i class="fas fa-chevron-right"></i></button>
+            </div>
+        </section>
+
+        <section class="social-media-section">
+            <p>Síguenos en Facebook y en Instagram</p>
+        </section>
+
+        <section class="info-section">
+            <div class="contact-hours-container">
+                <div class="contact-info">
+                    <img src="images/small_logo.png" alt="Small Hana no Yoru Logo" class="small-logo">
+                    <h2>Visítanos:</h2>
+                    <ul>
+                        <li><i class="fas fa-map-marker-alt"></i> Marsella 39, Colonia Juárez</li>
+                        <li><i class="fas fa-map-marker-alt"></i> Av. Peter Barros Sierra 540</li>
+                        <li><i class="fas fa-map-marker-alt"></i> Cedro 71, San Rafael</li>
+                    </ul>
+                    <h2>Contacto:</h2>
+                    <p><i class="fas fa-envelope"></i> hananoyorucafe@gmail.com</p>
+                </div>
+                <div class="hours-info">
+                    <div class="hours-block">
+                        <h3>Lunes - Jueves</h3>
+                        <p>11:30 - 14:30, 18:00 - 22:30</p>
+                    </div>
+                    <div class="hours-block">
+                        <h3>Viernes y Sábados</h3>
+                        <p>11:00 - 14:00, 18:00 - 22:30</p>
+                    </div>
+                    <div class="hours-block">
+                        <h3>Domingos</h3>
+                        <p>11:00 - 14:00</p>
+                    </div>
+                </div>
+            </div>
+            <div class="map-container">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3762.6934484084283!2d-99.1729099858971!3d19.43260788688172!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x85d1ff36081e79df%3A0x673c68e0d61b6e4e!2sCDMX!5e0!3m2!1ses-419!2smx!4v1678901234567!5m2!1ses-419!2smx"
+                        width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+        </section>
+    </main>
+
+    <footer class="main-footer">
+        <p>© 2025 Hana no Yoru Café. Todos los derechos reservados.</p>
+    </footer>
+
+    <script src="script.js" defer></script>
 </body>
 </html>
