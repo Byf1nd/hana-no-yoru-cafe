@@ -2,37 +2,6 @@
 
 // Función para inicializar el menú de hamburguesa
 function setupHamburgerMenu() {
-    // Selecciona el botón del menú de hamburguesa
-    const hamburgerMenu = document.querySelector('.hamburger-menu');
-    // Selecciona la lista de navegación (el menú que se va a mostrar/ocultar)
-    const navList = document.querySelector('.nav-list');
-
-    // Verifica que ambos elementos existan antes de añadir el event listener
-    if (hamburgerMenu && navList) {
-        // Añade un 'event listener' para detectar clics en el botón de hamburguesa
-        hamburgerMenu.addEventListener('click', () => {
-            // Alterna la clase 'active' en la lista de navegación
-            // Esto es lo que CSS usará para mostrar/ocultar el menú
-            navList.classList.toggle('active');
-            // También alterna la clase 'active' en el botón de hamburguesa
-            // Esto se usa para cambiar la apariencia del ícono (por ejemplo, a una 'X')
-            hamburgerMenu.classList.toggle('active');
-        });
-    } else {
-        console.warn("No se encontraron los elementos del menú de hamburguesa. Asegúrate de que las clases '.hamburger-menu' y '.nav-list' existan en tu HTML.");
-    }
-}
-
-// Ejecuta la función cuando el DOM esté completamente cargado
-// Esto asegura que los elementos HTML ya existan cuando el script intente seleccionarlos
-document.addEventListener('DOMContentLoaded', setupHamburgerMenu);
-
-
-// script.js
-// Archivo JavaScript para la interacción del sitio
-
-// Función para inicializar el menú de hamburguesa
-function setupHamburgerMenu() {
     const hamburgerMenu = document.querySelector('.hamburger-menu');
     const navList = document.querySelector('.nav-list');
 
@@ -46,75 +15,86 @@ function setupHamburgerMenu() {
     }
 }
 
-// --- Funciones para la página de Reservación ---
-
+// --- Funciones para la página de Reservación  ---
 function setupReservationForm() {
     const reservationForm = document.getElementById('reservationForm');
     const confirmationSection = document.getElementById('confirmationSection');
 
-    // Selectores para los botones de invitados, duración y slots de tiempo
     const guestButtons = document.querySelectorAll('.guest-btn');
     const durationButtons = document.querySelectorAll('.duration-btn');
     const timeSlotButtons = document.querySelectorAll('.time-slot-btn');
 
-    // Función para manejar la selección de un botón (invitados, duración, tiempo)
     function handleButtonClick(buttons, event) {
-        buttons.forEach(btn => btn.classList.remove('active')); // Desactiva todos
-        event.target.classList.add('active'); // Activa el clicado
+        buttons.forEach(btn => btn.classList.remove('active'));
+        event.target.classList.add('active');
     }
 
-    // Añadir event listeners a los botones de invitados
     guestButtons.forEach(button => {
         button.addEventListener('click', (event) => handleButtonClick(guestButtons, event));
     });
 
-    // Añadir event listeners a los botones de duración
     durationButtons.forEach(button => {
         button.addEventListener('click', (event) => handleButtonClick(durationButtons, event));
     });
 
-    // Añadir event listeners a los botones de slots de tiempo
     timeSlotButtons.forEach(button => {
         button.addEventListener('click', (event) => handleButtonClick(timeSlotButtons, event));
     });
 
-    // Manejar el envío del formulario
     if (reservationForm) {
         reservationForm.addEventListener('submit', (event) => {
-            event.preventDefault(); // Evita el envío predeterminado del formulario
+            event.preventDefault();
 
-            // Aquí sepueden añadir validaciones de formulario si es necesario
-
-            // Muestra la sección de confirmación
             if (confirmationSection) {
-                // Oculta la sección del formulario
                 reservationForm.closest('.reservation-section').classList.add('hidden');
-                confirmationSection.classList.remove('hidden'); // Muestra la confirmación
+                confirmationSection.classList.remove('hidden');
             } else {
                 console.error("No se encontró la sección de confirmación.");
             }
-
-            // En un escenario real, aquí enviaríamos los datos a un servidor
-            // fetch('/api/reserve', {
-            //     method: 'POST',
-            //     body: new FormData(reservationForm)
-            // }).then(response => response.json())
-            //   .then(data => {
-            //       if (data.success) {
-            //           // Mostrar confirmación
-            //       } else {
-            //           // Mostrar mensaje de error
-            //       }
-            //   }).catch(error => console.error('Error:', error));
         });
-    } else {
-        console.warn("No se encontró el formulario de reservación con ID 'reservationForm'.");
     }
+}
+
+// --- Funciones para la página de Postres (Carousel) ---
+function setupCarousels() {
+    // Selecciona todos los botones de navegación de carrusel
+    const carouselNavBtns = document.querySelectorAll('.carousel-nav-btn');
+
+    carouselNavBtns.forEach(button => {
+        button.addEventListener('click', () => {
+            // Obtiene el ID del carrusel objetivo del atributo data-target
+            const carouselId = button.dataset.target;
+            const carousel = document.getElementById(carouselId);
+
+            if (carousel) {
+                // Determina la dirección del desplazamiento
+                const direction = button.classList.contains('next-btn') ? 1 : -1;
+                // Calcula el ancho de una tarjeta más el espacio entre ellas (gap)
+                // Asumimos un ancho de tarjeta de 300px y un gap de 30px (del CSS)
+                // O podemos obtenerlo dinámicamente si las tarjetas no tienen un ancho fijo:
+                // const cardWidth = carousel.querySelector('.dessert-card')?.offsetWidth || 300;
+                // const gap = 30; // Asegurarnos de que este valor coincida con el CSS
+                // const scrollAmount = (cardWidth + gap) * 2; // Desplazar 2 tarjetas a la vez
+
+                // Para un desplazamiento más flexible, podemos desplazar una cantidad fija de píxeles
+                // o calcular el ancho visible del carrusel
+                const scrollAmount = carousel.clientWidth / 1; // Desplazarse por el ancho visible (muestra 1 o 2 tarjetas aprox.)
+                                                              // Podemos ajustar el divisor para que desplace más o menos
+                carousel.scrollBy({
+                    left: direction * scrollAmount,
+                    behavior: 'smooth'
+                });
+            } else {
+                console.warn(`Carousel with ID '${carouselId}' not found.`);
+            }
+        });
+    });
 }
 
 
 // Ejecuta las funciones cuando el DOM esté completamente cargado
 document.addEventListener('DOMContentLoaded', () => {
     setupHamburgerMenu();
-    setupReservationForm(); // Llama a la función para configurar el formulario de reserva
+    setupReservationForm(); // Solo se ejecutará si los elementos del formulario existen
+    setupCarousels(); // Llama a la función para configurar los carruseles
 });
