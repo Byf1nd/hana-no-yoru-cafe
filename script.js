@@ -1,3 +1,6 @@
+//Saludo
+console.log("Hola, mundo");
+
 // Archivo JavaScript para la interacción del sitio
 
 // Función para inicializar el menú de hamburguesa
