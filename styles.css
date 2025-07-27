@@ -832,6 +832,146 @@ img {
     margin-top: auto;
 }
 
+/* Sección de Categoría de Bebidas (Contenedor para carrusel) */
+.drinks-category-section {
+    padding: 60px 5%;
+    background-color: #fcfcfc;
+}
+
+.drinks-category-section h2 {
+    font-family: 'Pacifico', cursive;
+    font-size: 2.5em;
+    color: var(--primary-pink);
+    text-align: center;
+    margin-bottom: 40px;
+    position: relative;
+}
+
+/* Línea debajo del título de categoría */
+.drinks-category-section h2::after {
+    content: '';
+    display: block;
+    width: 80px;
+    height: 3px;
+    background-color: var(--primary-pink);
+    margin: 15px auto 0 auto;
+    border-radius: 2px;
+}
+
+/* Contenedor del Carrusel (Envoltorio para contenido y botones de navegación) */
+.carousel-container {
+    display: flex;
+    align-items: center;
+    position: relative;
+    margin: 0 auto;
+    max-width: 1200px;
+}
+
+/* Contenido del Carrusel (Parte desplazable) */
+.carousel-content {
+    display: flex;
+    overflow-x: scroll;
+    scroll-behavior: smooth;
+    -webkit-overflow-scrolling: touch;
+    padding: 20px 0;
+    gap: 30px;
+    /* Ocultar barra de desplazamiento */
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+}
+
+.carousel-content::-webkit-scrollbar {
+    display: none;
+}
+
+/* Botones de navegación del Carrusel */
+.carousel-nav-btn {
+    background-color: rgba(255, 255, 255, 0.8);
+    border: none;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    font-size: 1.5em;
+    color: var(--primary-pink);
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 10;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.carousel-nav-btn:hover {
+    background-color: var(--primary-pink);
+    color: white;
+    transform: translateY(-50%) scale(1.1);
+}
+
+.carousel-nav-btn.prev-btn {
+    left: -25px;
+}
+
+.carousel-nav-btn.next-btn {
+    right: -25px;
+}
+
+/* Estilo de Tarjeta de Postre */
+.drink-card {
+    flex: 0 0 auto;
+    width: 300px;
+    background-color: var(--light-pink);
+    border-radius: var(--border-radius-lg);
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.2s ease;
+}
+
+.drink-card:hover {
+    transform: translateY(-5px);
+}
+
+.drink-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-bottom: 2px solid var(--primary-pink);
+}
+
+.drink-card .card-info {
+    padding: 20px;
+    text-align: center;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.drink-card .card-info h3 {
+    font-size: 1.4em;
+    color: var(--dark-text);
+    margin-bottom: 10px;
+    font-weight: 700;
+}
+
+.drink-card .card-info p {
+    font-size: 0.95em;
+    color: var(--grey-text);
+    line-height: 1.5;
+    margin-bottom: 15px;
+}
+
+.drink-card .card-info .price {
+    font-size: 1.2em;
+    font-weight: 700;
+    color: var(--primary-pink);
+    margin-top: auto;
+}
 
 /* --- DISEÑO RESPONSIVO --- */
 
@@ -886,9 +1026,7 @@ img {
         height: 250px;
     }
 
-    .desserts-hero-banner h1 {
-        font-size: 2.5em;
-    }
+
 
     .carousel-container {
         max-width: 90%;
@@ -902,7 +1040,7 @@ img {
         right: 0px;
     }
 
-    .dessert-card {
+    .drink-card {
         width: 280px;
     }
 }
