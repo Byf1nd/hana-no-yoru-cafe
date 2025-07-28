@@ -1055,7 +1055,7 @@ img {
     line-height: 1.5;
 }
 
-.service-image-wrapper {
+.branch-image-wrapper {
     width: 100%;
     height: 200px; /* Altura fija para las imágenes */
     border-radius: var(--border-radius-sm);
@@ -1063,7 +1063,7 @@ img {
     box-shadow: 0 2px 8px rgba(0,0,0,0.1);
 }
 
-.service-image-wrapper {
+.branch-image-wrapper {
     width: 100%;
     height: 100%;
     object-fit: cover;
@@ -1109,7 +1109,7 @@ img {
     width: 280px; /* Ancho fijo para cada elemento de servicio */
 }
 
-.service-image-wrapper img {
+.service-image-wrapper {
     width: 200px; /* Tamaño del círculo para la imagen */
     height: 200px;
     border-radius: 50%; /* Hacerlo circular */
