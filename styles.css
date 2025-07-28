@@ -67,10 +67,12 @@ img {
 .page-title {
   font-family: 'Pacifico', cursive;
   font-size: 3rem;
-  color: #b3478f; /* Rosa oscuro */
+  color: #b3478f;
   text-align: center;
-  margin-top: 1rem;
-  margin-bottom: 1rem;
+  margin: 1.5rem auto;
+  padding: 0 1rem;
+  max-width: 90%;
+  line-height: 1.2;
 }
 
 .main-header .logo h1 {
@@ -848,6 +850,30 @@ img {
 
 /* --- DISEÑO RESPONSIVO --- */
 
+@media (max-width: 768px) {
+  .page-title {
+    font-size: 2.2rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .page-title {
+    font-size: 1.8rem;
+  }
+}
+
+.logo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 1rem;
+}
+
+.logo img {
+  max-width: 120px;
+  height: auto;
+}
+
 @media (max-width: 992px) {
     .hero-section {
         grid-template-columns: 1fr;
@@ -898,7 +924,6 @@ img {
     .desserts-hero-banner {
         height: 250px;
     }
-
 
 
     .carousel-container {
@@ -958,6 +983,7 @@ img {
         top: 20px;
     }
 
+    
     /* Animación del menú de hamburguesa */
     .hamburger-menu.active .bar:nth-child(1) {
         transform: translateY(8px) rotate(45deg);
