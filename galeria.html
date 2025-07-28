@@ -4,6 +4,18 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <style>
+  .gallery img {
+    height: 200px; 
+    object-fit: cover;
+    width: 100%;
+  }
+  .gallery img:hover {
+    transform: scale(1.05);
+    transition: transform 0.3s ease;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  }
+</style>
 </head>
 <body>
     <section class="container my-5">
