@@ -1070,6 +1070,84 @@ img {
     display: block;
 }
 
+/* --- ESTILOS ESPECÍFICOS DE PÁGINA "SERVICIOS" --- */
+
+/* Hero Banner para la página de Servicios */
+.services-hero-banner {
+    background-color: var(--primary-pink); /* Fondo rosa principal */
+    height: 200px; /* Altura consistente con sucursales */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: var(--light-text);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.services-hero-banner h1 {
+    font-family: 'Pacifico', cursive;
+    font-size: 3em;
+    color: var(--light-text);
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+}
+
+/* Sección de la lista de servicios */
+.services-list-section {
+    padding: 60px 5%;
+    background-color: var(--light-pink); /* Fondo rosa claro */
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 50px; /* Espacio entre los elementos de servicio */
+}
+
+.service-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    width: 280px; /* Ancho fijo para cada elemento de servicio */
+}
+
+.service-image-wrapper {
+    width: 200px; /* Tamaño del círculo para la imagen */
+    height: 200px;
+    border-radius: 50%; /* Hacerlo circular */
+    overflow: hidden;
+    margin-bottom: 20px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2); /* Sombra para el efecto flotante */
+    transition: transform 0.3s ease;
+}
+
+.service-item:hover .service-image-wrapper {
+    transform: translateY(-10px); /* Efecto de elevación al pasar el ratón */
+}
+
+.service-image-wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Asegura que la imagen cubra el círculo */
+    display: block;
+}
+
+.service-item h2 {
+    font-size: 1.8em;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 700;
+}
+
+.service-link {
+    color: var(--dark-text); /* Color oscuro para el texto */
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.service-link:hover {
+    color: var(--primary-pink); /* Cambia a rosa principal al pasar el ratón */
+    text-decoration: underline;
+}
+
+
 /* --- DISEÑO RESPONSIVO --- */
 
 @media (max-width: 768px) {
@@ -1616,5 +1694,90 @@ img {
 
     .branch-image-wrapper {
         height: 150px;
+    }
+}
+
+@media (max-width: 992px) {
+    .services-hero-banner {
+        height: 180px;
+    }
+
+    .services-hero-banner h1 {
+        font-size: 2.5em;
+    }
+
+    .services-list-section {
+        padding: 50px 3%;
+        gap: 40px;
+    }
+
+    .service-item {
+        width: 45%; /* Dos columnas en tablets */
+        max-width: 300px;
+    }
+
+    .service-image-wrapper {
+        width: 180px;
+        height: 180px;
+    }
+
+    .service-item h2 {
+        font-size: 1.6em;
+    }
+}
+
+@media (max-width: 768px) {
+    .services-hero-banner {
+        height: 150px;
+    }
+
+    .services-hero-banner h1 {
+        font-size: 2em;
+    }
+
+    .services-list-section {
+        padding: 40px 3%;
+        gap: 30px;
+    }
+
+    .service-item {
+        width: 80%; /* Una columna en móviles */
+    }
+
+    .service-image-wrapper {
+        width: 150px;
+        height: 150px;
+    }
+
+    .service-item h2 {
+        font-size: 1.4em;
+    }
+}
+
+@media (max-width: 480px) {
+    .services-hero-banner {
+        height: 120px;
+    }
+
+    .services-hero-banner h1 {
+        font-size: 1.6em;
+    }
+
+    .services-list-section {
+        padding: 30px 2%;
+        gap: 20px;
+    }
+
+    .service-item {
+        width: 95%;
+    }
+
+    .service-image-wrapper {
+        width: 120px;
+        height: 120px;
+    }
+
+    .service-item h2 {
+        font-size: 1.2em;
     }
 }
