@@ -214,19 +214,19 @@ img {
     grid-row: 2 / 3;
 }
 
-.top-left img {
+.ejemplo-1 {
   height: 180px;
   width: 100%;
   object-fit: cover;
 }
 
-.top-right img {
+.ejemplo-2 {
   height: 150px;
   width: 100%;
   object-fit: cover;
 }
 
-.bottom-large img {
+.ejemplo-3 {
   height: 200px;
   width: 100%;
   object-fit: cover;
