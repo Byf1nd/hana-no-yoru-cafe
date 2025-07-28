@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Postres | Hana no Yoru Café</title>
+    <title>Bebidas | Hana no Yoru Café</title>
     <link rel="stylesheet" href="styles.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -35,9 +35,13 @@
     </header>
 
     <main>
+        <section class="drinks-hero-banner">
+            <div class="hero-text-overlay">
+                <h1>Bebidas</h1>
+                </div>
+            </section>
 
-
-        <section class="drinks-category-section">
+        <section class="drink-category-section">
             <h2>Bebidas</h2>
             <div class="carousel-container">
                 <button class="carousel-nav-btn prev-btn" data-target="main-drinks-carousel"><i class="fas fa-chevron-left"></i></button>
@@ -61,37 +65,65 @@
                     <div class="drink-card">
                         <img src="images/Cacao.jpg" alt="Cacao japonés con crema">
                         <div class="card-info">
-                            <h3>Cacao japonés con crema</h3>
+                            <h3>Cacao japonés con crema espesa</h3>
                             <p>Cacao, espresso, crema batida.</p>
                             <span class="price">$90.00</span>
                         </div>
-                        <div class="drink-card">
-                        <img src="images/Artesanal.jpg" alt="Bebidas Frías y Cócteles sin alcohol">
+                    </div>
+                    <div class="drink-card">
+                        <img src="images/cafe-tradicional.jpg" alt="Café Tradicional Japonés">
+                        <div class="card-info">
+                            <h3>Café Japonés Tradicional</h3>
+                            <p>Selección de granos de café de tueste japonés.</p>
+                            <span class="price">$70.00</span>
+                        </div>
+                    </div>
+                </div>
+                <button class="carousel-nav-btn next-btn" data-target="main-drinks-carousel"><i class="fas fa-chevron-right"></i></button>
+            </div>
+        </section>
+
+        <section class="drink-category-section">
+            <h2>Bebidas Frías & Cócteles sin alcohol</h2>
+            <div class="carousel-container">
+                <button class="carousel-nav-btn prev-btn" data-target="cold-drinks-carousel"><i class="fas fa-chevron-left"></i></button>
+                <div class="carousel-content" id="cold-drinks-carousel">
+                    <div class="drink-card">
+                        <img src="images/Artesanal.jpg" alt="Soda artesanal de flor de Ume">
                         <div class="card-info">
                             <h3>Soda artesanal de flor de Ume</h3>
-                            <p>Agua con gas, miel, limón, extractos y hierbas.</p>
+                            <p>Flor de Ume, sal y vinagre de ciruela.</p>
                             <span class="price">$105.00</span>
                         </div>
                     </div>
                     <div class="drink-card">
-                        <img src="images/Matcha.jpg" alt="Bebidas Frías y Cócteles sin alcohol">
+                        <img src="images/Matcha.jpg" alt="Matcha tonic con jengibre">
                         <div class="card-info">
                             <h3>Matcha tonic con jengibre</h3>
-                            <p>Matcha, jarabe de jengibre, agua tónica, rojada de limón.</p>
+                            <p>Matcha, jarabe de jengibre, agua tónica, rodaja de limón.</p>
                             <span class="price">$95.00</span>
                         </div>
-                        <div class="drink-card">
-                        <img src="images/Limonada.jpg" alt="Bebidas Frías y Cócteles sin alcohol">
+                        <div class="seasonal-badge">De temporada</div>
+                    </div>
+                    <div class="drink-card">
+                        <img src="images/Limonada.jpg" alt="Tisana fría de ciruela roja">
                         <div class="card-info">
-                            <h3>Limonada con flor de loto</h3>
-                            <p>Limón, miel, infusión de flor de loto, petalos comestibles.</p>
+                            <h3>Tisana fría de ciruela roja</h3>
+                            <p>Ciruela roja, hibisco, limón, azúcar.</p>
                             <span class="price">$65.00</span>
                         </div>
                     </div>
+                    <div class="drink-card">
+                        <img src="images/cold-drink-extra.jpg" alt="Infusión fría de rooibos">
+                        <div class="card-info">
+                            <h3>Infusión fría de rooibos</h3>
+                            <p>Rooibos orgánico, bayas de Goji, toque de menta.</p>
+                            <span class="price">$80.00</span>
+                        </div>
+                    </div>
                 </div>
-                <button class="carousel-nav-btn next-btn" data-target="seasonal-drinks-carousel"><i class="fas fa-chevron-right"></i></button>
+                <button class="carousel-nav-btn next-btn" data-target="cold-drinks-carousel"><i class="fas fa-chevron-right"></i></button>
             </div>
-        
         </section>
 
         <section class="social-media-section">
