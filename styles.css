@@ -1,19 +1,19 @@
 /* ESTILOS GENERALES Y REINICIO */
 :root {
     /* Definición de colores base */
-    --primary-pink: #e76f9d;
-    --light-pink: #fde8ed;
-    --dark-text: #333;
-    --light-text: #f8f8f8;
-    --grey-text: #666;
-    --button-bg: #e76f9d;
-    --button-text: white;
-    --border-radius-lg: 15px;
-    --border-radius-sm: 8px;
+    --primary-pink: #e76f9d; /* Rosa principal */
+    --light-pink: #fde8ed; /* Rosa claro para fondos */
+    --dark-text: #333; /* Texto oscuro */
+    --light-text: #f8f8f8; /* Texto claro */
+    --grey-text: #666; /* Texto gris */
+    --button-bg: #e76f9d; /* Fondo de botón */
+    --button-text: white; /* Texto de botón */
+    --border-radius-lg: 15px; /* Radio de borde grande */
+    --border-radius-sm: 8px; /* Radio de borde pequeño */
 
     /* Alturas para cálculo dinámico */
-    --header-height: 80px;
-    --footer-height: 60px;
+    --header-height: 80px; /* Altura del encabezado */
+    --footer-height: 60px; /* Altura del pie de página */
 }
 
 /* Reinicio básico */
@@ -56,7 +56,7 @@ img {
     position: sticky;
     top: 0;
     z-index: 1000;
-    min-height: var(--header-height);
+    min-height: var(--header-height); /* Asegura la altura mínima */
 }
 
 .main-header .logo img {
@@ -311,7 +311,7 @@ img {
     text-align: center;
     padding: 20px;
     font-size: 0.9em;
-    min-height: var(--footer-height);
+    min-height: var(--footer-height); /* Asegura la altura mínima */
 }
 
 /* --- ESTILOS ESPECÍFICOS DE PÁGINA "ACERCA DE NOSOTROS" --- */
@@ -329,7 +329,7 @@ img {
     text-align: center;
     color: var(--light-text);
     position: relative;
-    overflow: hidden;
+    overflow: hidden; /* Asegura que el pseudo-elemento no se desborde */
 }
 
 /* Capa oscura para el texto */
@@ -427,4 +427,1021 @@ img {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 50px;
-    padding: 60px
+    padding: 60px 5%;
+    background-color: #fff;
+    align-items: center;
+}
+
+.history-content {
+    padding-right: 20px;
+}
+
+.history-content h2 {
+    font-family: 'Pacifico', cursive;
+    font-size: 2.8em;
+    color: var(--primary-pink);
+    margin-bottom: 25px;
+    line-height: 1.2;
+}
+
+.history-content p {
+    font-size: 1.1em;
+    color: var(--dark-text);
+    line-height: 1.8;
+}
+
+.history-image {
+    border-radius: var(--border-radius-lg);
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.15);
+}
+
+.history-image img {
+    width: 100%;
+    height: auto;
+    display: block;
+    object-fit: cover;
+}
+
+/* --- ESTILOS ESPECÍFICOS DE PÁGINA DE RESERVA --- */
+
+.reservation-section,
+.confirmation-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: calc(100vh - var(--header-height) - var(--footer-height));
+    padding: 40px 5%;
+    background-color: var(--light-pink);
+}
+
+.reservation-card,
+.confirmation-card {
+    background-color: #fff;
+    padding: 40px;
+    border-radius: var(--border-radius-lg);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+    max-width: 500px;
+    width: 100%;
+    text-align: center;
+}
+
+.reservation-card h2 {
+    font-family: 'Pacifico', cursive;
+    font-size: 2.2em;
+    color: var(--primary-pink);
+    margin-bottom: 30px;
+}
+
+/* Estilos de pasos de formulario */
+.form-step {
+    border: 1px solid #eee;
+    padding: 25px;
+    margin-bottom: 25px;
+    border-radius: var(--border-radius-sm);
+    text-align: left;
+    position: relative;
+    background-color: #fcfcfc;
+}
+
+.form-step .step-number {
+    position: absolute;
+    top: -15px;
+    left: 20px;
+    background-color: var(--primary-pink);
+    color: white;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: 700;
+    font-size: 1.1em;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}
+
+.form-step h3 {
+    font-size: 1.4em;
+    color: var(--dark-text);
+    margin-bottom: 20px;
+    margin-left: 40px;
+}
+
+/* Selectores de invitados y duración */
+.guests-selector,
+.duration-selector,
+.time-slots {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: center;
+    margin-top: 15px;
+}
+
+.guest-btn,
+.duration-btn,
+.time-slot-btn {
+    background-color: #f0f0f0;
+    color: var(--dark-text);
+    padding: 10px 15px;
+    border: 1px solid #ddd;
+    border-radius: var(--border-radius-sm);
+    cursor: pointer;
+    font-size: 1em;
+    transition: all 0.2s ease;
+    min-width: 50px;
+}
+
+.guest-btn.active,
+.duration-btn.active,
+.time-slot-btn.active {
+    background-color: var(--primary-pink);
+    color: white;
+    border-color: var(--primary-pink);
+    transform: translateY(-2px);
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}
+
+.guest-btn:hover,
+.duration-btn:hover,
+.time-slot-btn:hover {
+    background-color: var(--primary-pink);
+    color: white;
+    border-color: var(--primary-pink);
+}
+
+/* Entrada de fecha */
+#reservation-date {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: var(--border-radius-sm);
+    font-size: 1em;
+    margin-bottom: 20px;
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+}
+
+/* Entradas de información de contacto */
+.contact-inputs {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.contact-inputs input[type="text"],
+.contact-inputs input[type="email"] {
+    width: 100%;
+    padding: 12px 15px;
+    border: 1px solid #ddd;
+    border-radius: var(--border-radius-sm);
+    font-size: 1em;
+    transition: border-color 0.2s ease;
+}
+
+.contact-inputs input[type="text"]:focus,
+.contact-inputs input[type="email"]:focus {
+    outline: none;
+    border-color: var(--primary-pink);
+    box-shadow: 0 0 0 3px rgba(231, 111, 157, 0.2);
+}
+
+/* Botón de enviar */
+.submit-reservation-btn {
+    background-color: var(--button-bg);
+    color: var(--button-text);
+    padding: 15px 30px;
+    border: none;
+    border-radius: var(--border-radius-sm);
+    font-size: 1.1em;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    font-weight: 700;
+    margin-top: 30px;
+    width: 100%;
+}
+
+.submit-reservation-btn:hover {
+    background-color: #d15a86;
+    transform: translateY(-2px);
+}
+
+/* Estilos de sección de confirmación */
+.confirmation-section.hidden {
+    display: none;
+}
+
+.confirmation-card .confirmation-logo {
+    width: 120px;
+    height: auto;
+    margin: 0 auto 30px auto;
+}
+
+.confirmation-card h2 {
+    font-family: 'Pacifico', cursive;
+    font-size: 2em;
+    color: var(--primary-pink);
+    margin-bottom: 15px;
+}
+
+.confirmation-card p {
+    font-size: 1.1em;
+    color: var(--dark-text);
+    margin-bottom: 30px;
+    line-height: 1.6;
+}
+
+.back-to-home-btn {
+    background-color: var(--button-bg);
+    color: var(--button-text);
+    padding: 12px 25px;
+    border: none;
+    border-radius: var(--border-radius-sm);
+    font-size: 1em;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    font-weight: 700;
+}
+
+.back-to-home-btn:hover {
+    background-color: #d15a86;
+}
+
+/* --- ESTILOS ESPECÍFICOS DE PÁGINA DE POSTRES --- */
+
+/* Banner Hero para página de Postres */
+.desserts-hero-banner {
+    background-image: url('images/desserts_banner.jpg');
+    background-size: cover;
+    background-position: center;
+    height: 300px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: var(--light-text);
+    position: relative;
+    overflow: hidden;
+}
+
+.desserts-hero-banner::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.3);
+    z-index: 1;
+}
+
+.desserts-hero-banner h1 {
+    font-family: 'Pacifico', cursive;
+    font-size: 3em;
+    color: var(--light-text);
+    margin-bottom: 10px;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+    z-index: 2;
+}
+
+/* Sección de Categoría de Postres (Contenedor para carrusel) */
+.dessert-category-section {
+    padding: 60px 5%;
+    background-color: #fcfcfc;
+}
+
+.dessert-category-section h2 {
+    font-family: 'Pacifico', cursive;
+    font-size: 2.5em;
+    color: var(--primary-pink);
+    text-align: center;
+    margin-bottom: 40px;
+    position: relative;
+}
+
+/* Línea debajo del título de categoría */
+.dessert-category-section h2::after {
+    content: '';
+    display: block;
+    width: 80px;
+    height: 3px;
+    background-color: var(--primary-pink);
+    margin: 15px auto 0 auto;
+    border-radius: 2px;
+}
+
+/* Contenedor del Carrusel (Envoltorio para contenido y botones de navegación) */
+.carousel-container {
+    display: flex;
+    align-items: center;
+    position: relative;
+    margin: 0 auto;
+    max-width: 1200px;
+}
+
+/* Contenido del Carrusel (Parte desplazable) */
+.carousel-content {
+    display: flex;
+    overflow-x: scroll;
+    scroll-behavior: smooth;
+    -webkit-overflow-scrolling: touch;
+    padding: 20px 0;
+    gap: 30px;
+    /* Ocultar barra de desplazamiento */
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+}
+
+.carousel-content::-webkit-scrollbar {
+    display: none;
+}
+
+/* Botones de navegación del Carrusel */
+.carousel-nav-btn {
+    background-color: rgba(255, 255, 255, 0.8);
+    border: none;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    font-size: 1.5em;
+    color: var(--primary-pink);
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 10;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.carousel-nav-btn:hover {
+    background-color: var(--primary-pink);
+    color: white;
+    transform: translateY(-50%) scale(1.1);
+}
+
+.carousel-nav-btn.prev-btn {
+    left: -25px;
+}
+
+.carousel-nav-btn.next-btn {
+    right: -25px;
+}
+
+/* Estilo de Tarjeta de Postre */
+.dessert-card {
+    flex: 0 0 auto;
+    width: 300px;
+    background-color: var(--light-pink);
+    border-radius: var(--border-radius-lg);
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.2s ease;
+}
+
+.dessert-card:hover {
+    transform: translateY(-5px);
+}
+
+.dessert-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-bottom: 2px solid var(--primary-pink);
+}
+
+.dessert-card .card-info {
+    padding: 20px;
+    text-align: center;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.dessert-card .card-info h3 {
+    font-size: 1.4em;
+    color: var(--dark-text);
+    margin-bottom: 10px;
+    font-weight: 700;
+}
+
+.dessert-card .card-info p {
+    font-size: 0.95em;
+    color: var(--grey-text);
+    line-height: 1.5;
+    margin-bottom: 15px;
+}
+
+.dessert-card .card-info .price {
+    font-size: 1.2em;
+    font-weight: 700;
+    color: var(--primary-pink);
+    margin-top: auto;
+}
+
+/* --- ESTILOS ESPECÍFICOS DE PÁGINA DE BEBIDAS --- */
+
+/* Hero Banner */
+.drinks-hero-banner {
+    background-image: url('images/drinks_banner.jpg'); /* Imagen de fondo para el banner de bebidas */
+    background-size: cover;
+    background-position: center;
+    height: 300px; /* Altura consistente con el de postres */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: var(--light-text);
+    position: relative;
+}
+
+.drinks-hero-banner::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.3); /* Capa oscura semitransparente */
+    z-index: 1;
+}
+
+.drinks-hero-banner h1 {
+    font-family: 'Pacifico', cursive;
+    font-size: 3em;
+    color: var(--light-text);
+    margin-bottom: 10px;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+    z-index: 2;
+}
+
+/* Drink Category Section */
+.drink-category-section {
+    padding: 60px 5%;
+    background-color: #fcfcfc; /* Fondo blanco para las secciones */
+}
+
+.drink-category-section h2 {
+    font-family: 'Pacifico', cursive;
+    font-size: 2.5em;
+    color: var(--primary-pink);
+    text-align: center;
+    margin-bottom: 40px;
+    position: relative;
+}
+
+.drink-category-section h2::after {
+    content: '';
+    display: block;
+    width: 80px;
+    height: 3px;
+    background-color: var(--primary-pink);
+    margin: 15px auto 0 auto;
+    border-radius: 2px;
+}
+
+/* Drink Card Styling (similar to dessert-card, but named drink-card) */
+/* Reutilizamos muchos de los estilos de .dessert-card, solo cambiamos el nombre de la clase */
+.drink-card {
+    flex: 0 0 auto;
+    width: 300px; /* Ancho fijo para cada tarjeta de bebida */
+    background-color: var(--light-pink); /* Fondo rosa claro para la tarjeta */
+    border-radius: var(--border-radius-lg);
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.2s ease;
+    position: relative; /* Para el badge "De temporada" */
+}
+
+.drink-card:hover {
+    transform: translateY(-5px);
+}
+
+.drink-card img {
+    width: 100%;
+    height: 200px; /* Altura fija para la imagen de la bebida */
+    object-fit: cover;
+    border-bottom: 2px solid var(--primary-pink);
+}
+
+.drink-card .card-info {
+    padding: 20px;
+    text-align: center;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.drink-card .card-info h3 {
+    font-size: 1.4em;
+    color: var(--dark-text);
+    margin-bottom: 10px;
+    font-weight: 700;
+}
+
+.drink-card .card-info p {
+    font-size: 0.95em;
+    color: var(--grey-text);
+    line-height: 1.5;
+    margin-bottom: 15px;
+}
+
+.drink-card .card-info .price {
+    font-size: 1.2em;
+    font-weight: 700;
+    color: var(--primary-pink);
+    margin-top: auto;
+}
+
+/* Seasonal Badge Styling */
+.seasonal-badge {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background-color: var(--button-bg);
+    color: white;
+    padding: 5px 10px;
+    border-radius: var(--border-radius-sm);
+    font-size: 0.8em;
+    font-weight: 700;
+    text-transform: uppercase;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}
+
+
+/* --- DISEÑO RESPONSIVO --- */
+
+@media (max-width: 768px) {
+  .page-title {
+    font-size: 2.2rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .page-title {
+    font-size: 1.8rem;
+  }
+}
+
+.logo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 1rem;
+}
+
+.logo img {
+  max-width: 120px;
+  height: auto;
+}
+
+@media (max-width: 992px) {
+    .hero-section {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+
+    .hero-images {
+        margin-top: 30px;
+        grid-template-columns: 1fr;
+    }
+
+    .hero-images .top-left,
+    .hero-images .top-right,
+    .hero-images .bottom-large {
+        grid-column: 1 / 2;
+        grid-row: auto;
+    }
+
+    @media (max-width: 600px) {
+  .ejemplo-1 {
+    height: 180px;
+  }
+
+  .ejemplo-2 {
+    height: 180px;
+  }
+
+  .ejemplo-3 {
+    height: 180px;
+  }
+}
+
+    .info-section {
+        grid-template-columns: 1fr;
+    }
+
+    .map-container {
+        height: 350px;
+    }
+
+    .mvv-section {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .mvv-item {
+        margin-bottom: 30px;
+        min-width: unset;
+        width: 80%;
+    }
+
+    .history-section {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+
+    .history-content {
+        padding-right: 0;
+        margin-bottom: 30px;
+    }
+
+    .desserts-hero-banner {
+        height: 250px;
+    }
+
+
+    .carousel-container {
+        max-width: 90%;
+    }
+
+    .carousel-nav-btn {
+        width: 40px;
+        height: 40px;
+        font-size: 1.2em;
+        left: 0px;
+        right: 0px;
+    }
+
+    .drink-card {
+        width: 280px;
+    }
+}
+
+@media (max-width: 768px) {
+    .main-header {
+        flex-wrap: wrap;
+        justify-content: center;
+        padding: 15px 20px;
+    }
+
+    .main-nav {
+        width: 100%;
+        order: 3;
+    }
+
+    .main-nav .nav-list {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        background-color: var(--light-pink);
+        position: absolute;
+        top: var(--header-height);
+        left: 0;
+        padding: 20px 0;
+        box-shadow: 0 5px 10px rgba(0,0,0,0.1);
+        text-align: center;
+    }
+
+    .main-nav .nav-list.active {
+        display: flex;
+    }
+
+    .main-nav .nav-list li {
+        margin: 10px 0;
+    }
+
+    .hamburger-menu {
+        display: block;
+        position: absolute;
+        right: 20px;
+        top: 20px;
+    }
+
+
+    /* Animación del menú de hamburguesa */
+    .hamburger-menu.active .bar:nth-child(1) {
+        transform: translateY(8px) rotate(45deg);
+    }
+
+    .hamburger-menu.active .bar:nth-child(2) {
+        opacity: 0;
+    }
+
+    .hamburger-menu.active .bar:nth-child(3) {
+        transform: translateY(-8px) rotate(-45deg);
+    }
+
+    .hero-quote {
+        font-size: 1.5em;
+    }
+
+    .reserve-button {
+        padding: 12px 25px;
+        font-size: 1em;
+    }
+
+    .social-media-section {
+        font-size: 1.2em;
+        padding: 20px;
+    }
+
+    .contact-info, .hours-info {
+        padding: 20px;
+    }
+
+    .contact-info h2, .hours-info h3 {
+        font-size: 1.3em;
+    }
+
+    .map-container {
+        min-height: 300px;
+    }
+
+    .about-hero-banner {
+        height: 300px;
+    }
+
+    .about-hero-banner h1 {
+        font-size: 2.5em;
+    }
+
+    .about-hero-banner .subtitle {
+        font-size: 1em;
+    }
+
+    .mvv-item {
+        width: 95%;
+        padding: 20px;
+    }
+
+    .mvv-item i {
+        font-size: 2.5em;
+    }
+
+    .mvv-item h3 {
+        font-size: 1.5em;
+    }
+
+    .history-content h2 {
+        font-size: 2em;
+    }
+
+    .history-content p {
+        font-size: 1em;
+    }
+
+    .reservation-card,
+    .confirmation-card {
+        padding: 30px;
+    }
+
+    .reservation-card h2 {
+        font-size: 1.8em;
+    }
+
+    .form-step {
+        padding: 20px;
+    }
+
+    .form-step h3 {
+        font-size: 1.2em;
+        margin-left: 30px;
+    }
+
+    .guest-btn,
+    .duration-btn,
+    .time-slot-btn {
+        padding: 8px 12px;
+        font-size: 0.9em;
+        min-width: 40px;
+    }
+
+    .submit-reservation-btn {
+        padding: 12px 25px;
+        font-size: 1em;
+    }
+
+    .confirmation-card h2 {
+        font-size: 1.8em;
+    }
+
+    .confirmation-card p {
+        font-size: 1em;
+    }
+
+    .desserts-hero-banner {
+        height: 200px;
+    }
+
+    .desserts-hero-banner h1 {
+        font-size: 2em;
+    }
+
+    .dessert-category-section {
+        padding: 40px 20px;
+    }
+
+    .dessert-category-section h2 {
+        font-size: 2em;
+        margin-bottom: 30px;
+    }
+
+    .carousel-container {
+        max-width: 100%;
+        padding: 0 40px;
+    }
+
+    .carousel-nav-btn {
+        top: calc(50% + 20px);
+        transform: translateY(-50%);
+        width: 35px;
+        height: 35px;
+        font-size: 1em;
+    }
+
+    .dessert-card {
+        width: 260px;
+    }
+
+    .dessert-card img {
+        height: 180px;
+    }
+}
+
+@media (max-width: 480px) {
+    .main-header {
+        padding: 10px;
+    }
+
+    .hero-logo {
+        width: 120px;
+    }
+
+    .hero-quote {
+        font-size: 1.3em;
+    }
+
+    .reserve-button {
+        padding: 10px 20px;
+        font-size: 0.9em;
+    }
+
+    .contact-info ul li {
+        font-size: 0.9em;
+    }
+
+    .hours-info p {
+        font-size: 0.9em;
+    }
+
+    .about-hero-banner {
+        height: 250px;
+    }
+
+    .about-hero-banner h1 {
+        font-size: 2em;
+    }
+
+    .reservation-card,
+    .confirmation-card {
+        padding: 20px;
+    }
+
+    .form-step h3 {
+        font-size: 1.1em;
+        margin-left: 25px;
+    }
+
+    .form-step .step-number {
+        width: 25px;
+        height: 25px;
+        font-size: 0.9em;
+        top: -12px;
+        left: 15px;
+    }
+
+    .guest-btn,
+    .duration-btn,
+    .time-slot-btn {
+        padding: 6px 10px;
+        font-size: 0.8em;
+        min-width: 35px;
+    }
+
+    .desserts-hero-banner {
+        height: 180px;
+    }
+
+    .desserts-hero-banner h1 {
+        font-size: 1.8em;
+    }
+
+    .dessert-category-section h2 {
+        font-size: 1.8em;
+    }
+
+    .carousel-container {
+        padding: 0 30px;
+    }
+
+    .carousel-nav-btn {
+        width: 30px;
+        height: 30px;
+        font-size: 0.9em;
+    }
+
+    .dessert-card {
+        width: 240px;
+    }
+
+    .dessert-card img {
+        height: 160px;
+    }
+
+    .dessert-card .card-info h3 {
+        font-size: 1.2em;
+    }
+
+    .dessert-card .card-info p {
+        font-size: 0.85em;
+    }
+
+    .dessert-card .card-info .price {
+        font-size: 1.1em;
+    }
+}
+
+@media (max-width: 992px) {
+    .drinks-hero-banner {
+        height: 250px;
+    }
+    .drinks-hero-banner h1 {
+        font-size: 2.5em;
+    }
+    .drink-card {
+        width: 280px;
+    }
+}
+
+@media (max-width: 768px) {
+    .drinks-hero-banner {
+        height: 200px;
+    }
+    .drinks-hero-banner h1 {
+        font-size: 2em;
+    }
+    .drink-category-section {
+        padding: 40px 20px;
+    }
+    .drink-category-section h2 {
+        font-size: 2em;
+    }
+    .drink-card {
+        width: 260px;
+    }
+    .drink-card img {
+        height: 180px;
+    }
+}
+
+@media (max-width: 480px) {
+    .drinks-hero-banner {
+        height: 180px;
+    }
+    .drinks-hero-banner h1 {
+        font-size: 1.8em;
+    }
+    .drink-card {
+        width: 240px;
+    }
+    .drink-card img {
+        height: 160px;
+    }
+    .drink-card .card-info h3 {
+        font-size: 1.2em;
+    }
+    .drink-card .card-info p {
+        font-size: 0.85em;
+    }
+    .drink-card .card-info .price {
+        font-size: 1.1em;
+    }
+    .seasonal-badge {
+        font-size: 0.7em;
+        padding: 4px 8px;
+    }
+}
