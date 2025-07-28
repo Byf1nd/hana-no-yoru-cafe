@@ -1147,90 +1147,102 @@ img {
     text-decoration: underline;
 }
 
-/* --- Gallería --- */
+/* --- Galería --- */
 .gallery-header-container {
-    background-color: var(--primary-pink); 
-    padding: 60px 20px; 
-    margin-top: 80px; 
+    background-color: var(--primary-pink);
+    padding: 60px 20px;
+    margin-top: calc(-1 * var(--header-height)); 
     text-align: center;
     box-shadow: 0 4px 8px rgba(0,0,0,0.1);
 }
 
 .gallery-title {
-    color: var(--light-text); 
-    font-family: 'Pacifico', cursive; 
+    color: var(--light-text);
+    font-family: 'Pacifico', cursive;
     font-weight: 400;
-    font-size: 3.5rem; 
-    margin-bottom: 0; 
-    text-shadow: 2px 2px 4px rgba(0,0,0,0.3); 
+    font-size: 3.5rem;
+    margin-bottom: 0;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
 }
 
 .gallery-grid-container {
     padding-top: 30px;
     padding-bottom: 30px;
+    max-width: 1200px; 
+    margin-left: auto;
+    margin-right: auto; 
 }
 
 .gallery-card {
     background-color: #fff;
-    border-radius: var(--border-radius-lg); 
+    border-radius: var(--border-radius-lg);
     overflow: hidden;
-    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15); 
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    margin-bottom: 25px; 
-    border: 3px solid transparent; 
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+    transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease; /* Añadido border-color a transition */
+    margin-bottom: 25px;
+    border: 3px solid transparent; /* Para el borde en hover sin desplazar contenido */
+    display: flex; /* Asegura que el contenido (imagen) llene el card */
+    flex-direction: column; /* Apila la imagen y cualquier futuro contenido */
 }
 
 .gallery-card:hover {
-    transform: translateY(-8px); 
-    box-shadow: 0 12px 25px rgba(0, 0, 0, 0.25); 
-    border-color: var(--primary-pink); 
+    transform: translateY(-8px);
+    box-shadow: 0 12px 25px rgba(0, 0, 0, 0.25);
+    border-color: var(--primary-pink); /* Borde rosa en hover */
 }
 
 .gallery-img {
     width: 100%;
-    height: 220px;
-    object-fit: cover;
-    border-radius: var(--border-radius-lg) var(--border-radius-lg) 0 0; 
-    transition: transform 0.4s ease; 
+    height: 220px; /* Altura fija para las imágenes de la galería */
+    object-fit: cover; /* Asegura que la imagen cubra el espacio, recortando si es necesario */
+    border-radius: var(--border-radius-lg); /* CAMBIO: Aplicar border-radius a la imagen, no solo arriba */
+    transition: transform 0.4s ease;
 }
 
 .gallery-card:hover .gallery-img {
-    transform: scale(1.05); 
+    transform: scale(1.05);
 }
-
-.social-media-section p {
-    margin: 0;
-    font-size: 1.2em;
-    font-family: 'Pacifico', cursive; 
-
 
 /* --- DISEÑO RESPONSIVO --- */
 
-@media (max-width: 768px) {
-  .page-title {
-    font-size: 2.2rem;
-  }
-}
-
-@media (max-width: 480px) {
-  .page-title {
-    font-size: 1.8rem;
-  }
-}
-
-.logo {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin-top: 1rem;
-}
-
-.logo img {
-  max-width: 120px;
-  height: auto;
-}
-
 @media (max-width: 992px) {
+    /* Ajustes para el header en pantallas medianas */
+    .main-header {
+        flex-wrap: wrap; /* Permite que los elementos se envuelvan */
+        justify-content: space-between; /* Ajusta la justificación */
+        padding: 15px 3%; /* Ajusta el padding para que no sea tan estrecho */
+    }
+
+    .main-nav {
+        width: auto; /* Remueve el 100% que estaba forzado */
+        order: initial; /* Resetea el order para que no se desplace */
+        position: static; /* Remueve la posición absoluta */
+        box-shadow: none; /* Remueve la sombra */
+        background-color: transparent; /* Remueve el fondo */
+    }
+
+    .main-nav .nav-list {
+        display: flex; /* Mantiene la flexbox para nav-list */
+        flex-direction: row; /* Vuelve a la fila para desktop/tablet */
+        width: auto;
+        position: static;
+        padding: 0;
+        box-shadow: none;
+        text-align: left;
+    }
+
+    .main-nav .nav-list li {
+        margin: 0; /* Remueve el margin vertical extra */
+    }
+
+    .hamburger-menu {
+        display: none; /* Oculta el menú de hamburguesa en pantallas medianas y grandes */
+    }
+
+    .page-title {
+        font-size: 2.2rem;
+    }
+
     .hero-section {
         grid-template-columns: 1fr;
         text-align: center;
@@ -1241,26 +1253,10 @@ img {
         grid-template-columns: 1fr;
     }
 
-    .hero-images .top-left,
-    .hero-images .top-right,
-    .hero-images .bottom-large {
+    .hero-images .image-wrapper { /* Generalizar estos selectores */
         grid-column: 1 / 2;
         grid-row: auto;
     }
-
-    @media (max-width: 600px) {
-  .ejemplo-1 {
-    height: 180px;
-  }
-
-  .ejemplo-2 {
-    height: 180px;
-  }
-
-  .ejemplo-3 {
-    height: 180px;
-  }
-}
 
     .info-section {
         grid-template-columns: 1fr;
@@ -1291,10 +1287,13 @@ img {
         margin-bottom: 30px;
     }
 
-    .desserts-hero-banner {
-        height: 250px;
+    .desserts-hero-banner, .drinks-hero-banner, .branches-hero-banner, .services-hero-banner {
+        height: 250px; /* Consolidado para todos los banners hero */
     }
 
+    .desserts-hero-banner h1, .drinks-hero-banner h1, .branches-hero-banner h1, .services-hero-banner h1 {
+        font-size: 2.5em; /* Consolidado */
+    }
 
     .carousel-container {
         max-width: 90%;
@@ -1308,55 +1307,66 @@ img {
         right: 0px;
     }
 
-    .drink-card {
+    .drink-card, .dessert-card, .branch-card { /* Consolidado para tarjetas de producto/sucursal */
         width: 280px;
     }
 }
 
 @media (max-width: 768px) {
     .main-header {
-        flex-wrap: wrap;
-        justify-content: center;
+        flex-wrap: nowrap; /* Evita que el logo y el menú se envuelvan */
+        justify-content: space-between;
         padding: 15px 20px;
     }
 
     .main-nav {
+        display: none; /* Se oculta por defecto en móviles, gestionado por JS */
+        flex-direction: column;
+        position: fixed; /* Ojo: Si el header es fixed, este también podría ser fixed */
+        top: var(--header-height); /* Posicionar debajo del header */
+        left: 0;
         width: 100%;
-        order: 3;
+        height: calc(100vh - var(--header-height)); /* Cubre el resto de la pantalla */
+        background-color: var(--light-pink); /* Fondo del menú móvil */
+        box-shadow: 0 5px 10px rgba(0,0,0,0.1);
+        text-align: center;
+        overflow-y: auto; /* Si hay muchos elementos, permite scroll */
+        padding-top: 20px;
+        z-index: 999; /* Asegura que esté detrás del hamburger pero encima del contenido */
     }
 
     .main-nav .nav-list {
-        display: none;
-        flex-direction: column;
+        flex-direction: column; /* Las listas se apilan en móvil */
         width: 100%;
-        background-color: var(--light-pink);
-        position: absolute;
-        top: var(--header-height);
-        left: 0;
-        padding: 20px 0;
-        box-shadow: 0 5px 10px rgba(0,0,0,0.1);
-        text-align: center;
-    }
-
-    .main-nav .nav-list.active {
-        display: flex;
+        margin: 0;
+        padding: 0;
     }
 
     .main-nav .nav-list li {
         margin: 10px 0;
     }
 
-    .hamburger-menu {
-        display: block;
-        position: absolute;
-        right: 20px;
-        top: 20px;
+    .main-nav.active { /* Clase activa para mostrar el menú móvil */
+        display: flex;
     }
 
+    .hamburger-menu {
+        display: flex; /* Muestra el menú de hamburguesa */
+        flex-direction: column;
+        justify-content: space-between;
+        width: 30px;
+        height: 21px;
+        background: transparent;
+        border: none;
+        cursor: pointer;
+        padding: 0;
+        position: relative; /* Ajustar su posición en relación al main-header */
+        z-index: 1001;
+    }
 
     /* Animación del menú de hamburguesa */
     .hamburger-menu.active .bar:nth-child(1) {
-        transform: translateY(8px) rotate(45deg);
+        transform: translateY(9px) rotate(45deg); /* Ajustado para 30px ancho, 3px alto */
     }
 
     .hamburger-menu.active .bar:nth-child(2) {
@@ -1364,7 +1374,7 @@ img {
     }
 
     .hamburger-menu.active .bar:nth-child(3) {
-        transform: translateY(-8px) rotate(-45deg);
+        transform: translateY(-9px) rotate(-45deg); /* Ajustado */
     }
 
     .hero-quote {
@@ -1465,19 +1475,15 @@ img {
         font-size: 1em;
     }
 
-    .desserts-hero-banner {
+    .desserts-hero-banner, .drinks-hero-banner, .branches-hero-banner, .services-hero-banner {
         height: 200px;
     }
 
-    .desserts-hero-banner h1 {
+    .desserts-hero-banner h1, .drinks-hero-banner h1, .branches-hero-banner h1, .services-hero-banner h1 {
         font-size: 2em;
     }
 
-    .dessert-category-section {
-        padding: 40px 20px;
-    }
-
-    .dessert-category-section h2 {
+    .dessert-category-section h2, .drink-category-section h2 {
         font-size: 2em;
         margin-bottom: 30px;
     }
@@ -1495,11 +1501,34 @@ img {
         font-size: 1em;
     }
 
-    .dessert-card {
+    .dessert-card, .drink-card, .branch-card {
         width: 260px;
     }
 
-    .dessert-card img {
+    .dessert-card img, .drink-card img {
+        height: 180px;
+    }
+
+    /* Galería en móvil */
+    .gallery-header-container {
+        padding: 40px 15px;
+        margin-top: calc(-1 * var(--header-height)); /* Asegura que el banner esté debajo del header */
+    }
+
+    .gallery-title {
+        font-size: 2.8rem;
+    }
+
+    .gallery-grid-container {
+        padding-top: 20px;
+        padding-bottom: 20px;
+    }
+
+    .gallery-card {
+        margin-bottom: 15px;
+    }
+
+    .gallery-img {
         height: 180px;
     }
 }
@@ -1564,276 +1593,40 @@ img {
         min-width: 35px;
     }
 
-    .desserts-hero-banner {
+    .desserts-hero-banner, .drinks-hero-banner, .branches-hero-banner, .services-hero-banner {
         height: 180px;
     }
 
-    .desserts-hero-banner h1 {
+    .desserts-hero-banner h1, .drinks-hero-banner h1, .branches-hero-banner h1, .services-hero-banner h1 {
         font-size: 1.8em;
     }
 
-    .dessert-category-section h2 {
+    .dessert-category-section h2, .drink-category-section h2 {
         font-size: 1.8em;
     }
 
-    .carousel-container {
-        padding: 0 30px;
-    }
-
-    .carousel-nav-btn {
-        width: 30px;
-        height: 30px;
-        font-size: 0.9em;
-    }
-
-    .dessert-card {
-        width: 240px;
-    }
-
-    .dessert-card img {
-        height: 160px;
-    }
-
-    .dessert-card .card-info h3 {
-        font-size: 1.2em;
-    }
-
-    .dessert-card .card-info p {
-        font-size: 0.85em;
-    }
-
-    .dessert-card .card-info .price {
-        font-size: 1.1em;
+    /* Galería en móvil */
+    .gallery-img {
+        height: 150px;
     }
 }
 
-@media (max-width: 992px) {
-    .drinks-hero-banner {
-        height: 250px;
-    }
-    .drinks-hero-banner h1 {
-        font-size: 2.5em;
-    }
-    .drink-card {
-        width: 280px;
-    }
+/* Considerar mover el .logo de media queries a un lugar más global si aplica a todo */
+.logo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 1rem; /* Ajustar si es necesario */
 }
 
+.logo img {
+    max-width: 120px;
+    height: auto;
+}
+
+/* Considerar una media query específica para cuando el header-height cambia */
 @media (max-width: 768px) {
-    .drinks-hero-banner {
-        height: 200px;
-    }
-    .drinks-hero-banner h1 {
-        font-size: 2em;
-    }
-    .drink-category-section {
-        padding: 40px 20px;
-    }
-    .drink-category-section h2 {
-        font-size: 2em;
-    }
-    .drink-card {
-        width: 260px;
-    }
-    .drink-card img {
-        height: 180px;
-    }
-}
-
-@media (max-width: 480px) {
-    .drinks-hero-banner {
-        height: 180px;
-    }
-    .drinks-hero-banner h1 {
-        font-size: 1.8em;
-    }
-    .drink-card {
-        width: 240px;
-    }
-    .drink-card img {
-        height: 160px;
-    }
-    .drink-card .card-info h3 {
-        font-size: 1.2em;
-    }
-    .drink-card .card-info p {
-        font-size: 0.85em;
-    }
-    .drink-card .card-info .price {
-        font-size: 1.1em;
-    }
-    .seasonal-badge {
-        font-size: 0.7em;
-        padding: 4px 8px;
-    }
-}
-
-@media (max-width: 992px) {
-    .branches-hero-banner {
-        height: 180px;
-    }
-
-    .branches-hero-banner h1 {
-        font-size: 2.5em;
-    }
-
-    .branches-section {
-        padding: 50px 3%;
-    }
-
-    .branch-card {
-        width: 45%; /* Dos columnas en tablets */
-        max-width: 350px;
-    }
-}
-
-@media (max-width: 768px) {
-    .branches-hero-banner {
-        height: 150px;
-    }
-
-    .branches-hero-banner h1 {
-        font-size: 2em;
-    }
-
-    .branches-section {
-        padding: 40px 3%;
-    }
-
-    .branch-container {
-        gap: 30px;
-    }
-
-    .branch-card {
-        width: 80%; /* Una columna en móviles */
-        padding: 25px;
-    }
-
-    .branch-icon {
-        font-size: 2em;
-    }
-
-    .branch-card h3 {
-        font-size: 1.4em;
-    }
-
-    .branch-image-wrapper {
-        height: 180px;
-    }
-}
-
-@media (max-width: 480px) {
-    .branches-hero-banner {
-        height: 120px;
-    }
-
-    .branches-hero-banner h1 {
-        font-size: 1.6em;
-    }
-
-    .branches-section {
-        padding: 30px 2%;
-    }
-
-    .branch-card {
-        width: 95%;
-        padding: 20px;
-    }
-
-    .branch-icon {
-        font-size: 1.8em;
-    }
-
-    .branch-card h3 {
-        font-size: 1.2em;
-    }
-
-    .branch-image-wrapper {
-        height: 150px;
-    }
-}
-
-@media (max-width: 992px) {
-    .services-hero-banner {
-        height: 180px;
-    }
-
-    .services-hero-banner h1 {
-        font-size: 2.5em;
-    }
-
-    .services-list-section {
-        padding: 50px 3%;
-        gap: 40px;
-    }
-
-    .service-item {
-        width: 45%; /* Dos columnas en tablets */
-        max-width: 300px;
-    }
-
-    .service-image-wrapper {
-        width: 180px;
-        height: 180px;
-    }
-
-    .service-item h2 {
-        font-size: 1.6em;
-    }
-}
-
-@media (max-width: 768px) {
-    .services-hero-banner {
-        height: 150px;
-    }
-
-    .services-hero-banner h1 {
-        font-size: 2em;
-    }
-
-    .services-list-section {
-        padding: 40px 3%;
-        gap: 30px;
-    }
-
-    .service-item {
-        width: 80%; /* Una columna en móviles */
-    }
-
-    .service-image-wrapper {
-        width: 150px;
-        height: 150px;
-    }
-
-    .service-item h2 {
-        font-size: 1.4em;
-    }
-}
-
-@media (max-width: 480px) {
-    .services-hero-banner {
-        height: 120px;
-    }
-
-    .services-hero-banner h1 {
-        font-size: 1.6em;
-    }
-
-    .services-list-section {
-        padding: 30px 2%;
-        gap: 20px;
-    }
-
-    .service-item {
-        width: 95%;
-    }
-
-    .service-image-wrapper {
-        width: 120px;
-        height: 120px;
-    }
-
-    .service-item h2 {
-        font-size: 1.2em;
+    :root {
+        --header-height: 70px; /* Ejemplo de altura de header reducida en móvil */
     }
 }
