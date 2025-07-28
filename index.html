@@ -9,12 +9,15 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+<link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css" />
 </head>
 <body>
 <header class="main-header">
     <div class="logo">
         <img src="images/logo_circular.png" alt="Logo Hana no Yoru">
-        <h1>🌸 Hana no Yoru Café</h1>
+        <h1 data-aos="fade-up" data-aos-duration="3000">
+          🌸 Hana no Yoru Café
+        </h1>
     </div>
     <nav class="main-nav">
         <ul>
@@ -100,6 +103,11 @@
     </footer>
     
     <script src="script.js" defer></script>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>
+  AOS.init();
+</script>
     
 </body>
 </html>
