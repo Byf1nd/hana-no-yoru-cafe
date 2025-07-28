@@ -175,7 +175,7 @@ img {
 
 .hero-images img {
   max-width: 100%;
-  height: auto;
+  height: 50%;
   display: block;
 }
 
@@ -184,8 +184,7 @@ img {
     grid-template-columns: 1fr 1fr;
     grid-template-rows: auto auto;
     gap: 15px;
-    max-width: 100px; 
-    margin: 0 auto; 
+}
 
 .hero-images .image-wrapper {
     overflow: hidden;
