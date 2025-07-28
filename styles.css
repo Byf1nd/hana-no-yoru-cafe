@@ -1109,7 +1109,7 @@ img {
     width: 280px; /* Ancho fijo para cada elemento de servicio */
 }
 
-.service-image-wrapper {
+.service-image-wrapper img {
     width: 200px; /* Tamaño del círculo para la imagen */
     height: 200px;
     border-radius: 50%; /* Hacerlo circular */
