@@ -981,6 +981,94 @@ img {
     box-shadow: 0 2px 5px rgba(0,0,0,0.2);
 }
 
+/* --- ESTILOS ESPECÍFICOS DE PÁGINA "SUCURSALES" --- */
+
+/* Hero Banner para la página de Sucursales */
+.branches-hero-banner {
+    background-color: var(--primary-pink); /* Fondo rosa principal */
+    height: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: var(--light-text);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.branches-hero-banner h1 {
+    font-family: 'Pacifico', cursive;
+    font-size: 3em;
+    color: var(--light-text);
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+}
+
+/* Sección de Sucursales */
+.branches-section {
+    padding: 60px 5%;
+    background-color: #fcfcfc;
+    text-align: center;
+}
+
+.branch-container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 40px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.branch-card {
+    background-color: var(--light-pink);
+    border-radius: var(--border-radius-lg);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    overflow: hidden;
+    width: 320px; /* Ancho fijo para las tarjetas */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 30px;
+    transition: transform 0.3s ease;
+}
+
+.branch-card:hover {
+    transform: translateY(-8px);
+}
+
+.branch-icon {
+    font-size: 2.5em;
+    color: var(--primary-pink);
+    margin-bottom: 15px;
+}
+
+.branch-card h3 {
+    font-size: 1.6em;
+    color: var(--dark-text);
+    margin-bottom: 10px;
+    font-weight: 700;
+}
+
+.branch-card p {
+    font-size: 1em;
+    color: var(--grey-text);
+    margin-bottom: 20px;
+    line-height: 1.5;
+}
+
+.branch-image-wrapper {
+    width: 100%;
+    height: 200px; /* Altura fija para las imágenes */
+    border-radius: var(--border-radius-sm);
+    overflow: hidden;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.branch-image-wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
 
 /* --- DISEÑO RESPONSIVO --- */
 
@@ -1443,5 +1531,90 @@ img {
     .seasonal-badge {
         font-size: 0.7em;
         padding: 4px 8px;
+    }
+}
+
+@media (max-width: 992px) {
+    .branches-hero-banner {
+        height: 180px;
+    }
+
+    .branches-hero-banner h1 {
+        font-size: 2.5em;
+    }
+
+    .branches-section {
+        padding: 50px 3%;
+    }
+
+    .branch-card {
+        width: 45%; /* Dos columnas en tablets */
+        max-width: 350px;
+    }
+}
+
+@media (max-width: 768px) {
+    .branches-hero-banner {
+        height: 150px;
+    }
+
+    .branches-hero-banner h1 {
+        font-size: 2em;
+    }
+
+    .branches-section {
+        padding: 40px 3%;
+    }
+
+    .branch-container {
+        gap: 30px;
+    }
+
+    .branch-card {
+        width: 80%; /* Una columna en móviles */
+        padding: 25px;
+    }
+
+    .branch-icon {
+        font-size: 2em;
+    }
+
+    .branch-card h3 {
+        font-size: 1.4em;
+    }
+
+    .branch-image-wrapper {
+        height: 180px;
+    }
+}
+
+@media (max-width: 480px) {
+    .branches-hero-banner {
+        height: 120px;
+    }
+
+    .branches-hero-banner h1 {
+        font-size: 1.6em;
+    }
+
+    .branches-section {
+        padding: 30px 2%;
+    }
+
+    .branch-card {
+        width: 95%;
+        padding: 20px;
+    }
+
+    .branch-icon {
+        font-size: 1.8em;
+    }
+
+    .branch-card h3 {
+        font-size: 1.2em;
+    }
+
+    .branch-image-wrapper {
+        height: 150px;
     }
 }
