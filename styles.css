@@ -195,8 +195,8 @@ img {
 
 .hero-images .image-wrapper img {
     width: 100%;
-    height: 100%;
     object-fit: cover;
+    display: block;
 }
 
 .hero-images .top-left {
@@ -215,21 +215,24 @@ img {
 }
 
 .ejemplo-1 {
-  height: 180px;
+ aspect-ratio: 4 / 3;
   width: 100%;
   object-fit: cover;
+  display: block;
 }
 
 .ejemplo-2 {
-  height: 150px;
+   aspect-ratio: 3 / 2;
   width: 100%;
   object-fit: cover;
+  display: block;
 }
 
 .ejemplo-3 {
-  height: 200px;
+  aspect-ratio: 16 / 9;
   width: 100%;
   object-fit: cover;
+  display: block;
 }
 
 
