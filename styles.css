@@ -173,6 +173,12 @@ img {
     background-color: #d15a86;
 }
 
+.hero-images img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
 .hero-images {
     display: grid;
     grid-template-columns: 1fr 1fr;
