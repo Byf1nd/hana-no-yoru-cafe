@@ -1,59 +1,61 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <style>
-  .gallery img {
-    height: 200px; 
-    object-fit: cover;
-    width: 100%;
-  }
-  .gallery img:hover {
-    transform: scale(1.05);
-    transition: transform 0.3s ease;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
-  }
-</style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Galería de Fotos</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+  <style>
+    .gallery-img {
+      width: 100%;
+      height: auto;
+      object-fit: cover;
+    }
+    .gallery-item {
+      padding: 5px;
+    }
+  </style>
 </head>
 <body>
-    <section class="container my-5">
+
+  <div class="container-fluid">
+    <div class="row g-2">
+
+      <section class="container my-5">
   <h2 class="text-center mb-4" style="color: #b3478f; font-family: 'Pacifico', cursive;">
     Nuestra Galería
   </h2>
+
   <div class="row g-3 gallery">
     <div class="col-6 col-md-4 col-lg-3">
-      <img src="images/Artesanal.jpg" class="img-fluid rounded shadow-sm" alt="Foto 1">
+      <img src="images/Artesanal.jpg" class="img-fluid gallery-img" alt="Foto 1">
     </div>
     <div class="col-6 col-md-4 col-lg-3">
-      <img src="images/Cacao.jpg" class="img-fluid rounded shadow-sm" alt="Foto 2">
+      <img src="images/Cacao.jpg" class="img-fluid gallery-img" alt="Foto 2">
     </div>
     <div class="col-6 col-md-4 col-lg-3">
-      <img src="images/Lavender.jpg" class="img-fluid rounded shadow-sm" alt="Foto 3">
+      <img src="images/Lavender.jpg" class="img-fluid gallery-img" alt="Foto 3">
     </div>
     <div class="col-6 col-md-4 col-lg-3">
-      <img src="images/Limonada.jpg" class="img-fluid rounded shadow-sm" alt="Foto 4">
+      <img src="images/Limonada.jpg" class="img-fluid gallery-img" alt="Foto 4">
     </div>
     <div class="col-6 col-md-4 col-lg-3">
-      <img src="images/Matcha.jpg" class="img-fluid rounded shadow-sm" alt="Foto 5">
+      <img src="images/Matcha.jpg" class="img-fluid gallery-img" alt="Foto 5">
     </div>
     <div class="col-6 col-md-4 col-lg-3">
-      <img src="images/flor.jpg" class="img-fluid rounded shadow-sm" alt="Foto 6">
+      <img src="images/flor.jpg" class="img-fluid gallery-img" alt="Foto 6">
     </div>
     <div class="col-6 col-md-4 col-lg-3">
-      <img src="images/gateau_de_matcha.png" class="img-fluid rounded shadow-sm" alt="Foto 7">
+      <img src="images/gateau_de_matcha.png" class="img-fluid gallery-img" alt="Foto 7">
     </div>
     <div class="col-6 col-md-4 col-lg-3">
-      <img src="images/helado_artesanal.png" class="img-fluid rounded shadow-sm" alt="Foto 8">
+      <img src="images/helado_artesanal.png" class="img-fluid gallery-img" alt="Foto 8">
     </div>
-    <div class="col-6 col-md-4 col-lg-3">
-      <img src="images/Limonada.katen_flor_de_cerezo.png" class="img-fluid rounded shadow-sm" alt="Foto 9">
-    </div>
-    <div class="col-6 col-md-4 col-lg-3">
-      <img src="images/tarta_de_mousse_de_youzu.png" class="img-fluid rounded shadow-sm" alt="Foto 10">
-    </div>    
   </div>
-</section>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
+
