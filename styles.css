@@ -215,21 +215,21 @@ img {
 }
 
 .ejemplo-1 {
- aspect-ratio: 4 / 3;
+  height: 180px;
   width: 100%;
   object-fit: cover;
   display: block;
 }
 
 .ejemplo-2 {
-   aspect-ratio: 3 / 2;
+  height: 180px;
   width: 100%;
   object-fit: cover;
   display: block;
 }
 
 .ejemplo-3 {
-  aspect-ratio: 16 / 9;
+  height: 180px;
   width: 100%;
   object-fit: cover;
   display: block;
@@ -920,6 +920,20 @@ img {
         grid-column: 1 / 2;
         grid-row: auto;
     }
+
+    @media (max-width: 600px) {
+  .ejemplo-1 {
+    height: 180px;
+  }
+
+  .ejemplo-2 {
+    height: 180px;
+  }
+
+  .ejemplo-3 {
+    height: 180px;
+  }
+}
 
     .info-section {
         grid-template-columns: 1fr;
