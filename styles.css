@@ -64,8 +64,20 @@ img {
     width: auto;
 }
 
-/* Oculta el h1 del logo si se usa una imagen */
+.page-title {
+  font-family: 'Pacifico', cursive;
+  font-size: 3rem;
+  color: #b3478f; /* Rosa oscuro */
+  text-align: center;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+
 .main-header .logo h1 {
+    font-family: 'Pacifico', cursive;
+    font-size: 2.5rem;
+    color: #b3478f; 
+    margin-left: 1rem;
     display: none;
 }
 
