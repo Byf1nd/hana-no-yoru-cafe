@@ -217,21 +217,21 @@ img {
 .ejemplo-1 {
   height: 180px;
   width: 100%;
-  object-fit: cover;
+  object-fit: contain;
   display: block;
 }
 
 .ejemplo-2 {
   height: 180px;
   width: 100%;
-  object-fit: cover;
+  object-fit: contain;
   display: block;
 }
 
 .ejemplo-3 {
   height: 180px;
   width: 100%;
-  object-fit: cover;
+  object-fit: contain;
   display: block;
 }
 
