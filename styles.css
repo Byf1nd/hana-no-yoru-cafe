@@ -848,6 +848,138 @@ img {
     margin-top: auto;
 }
 
+/* --- ESTILOS ESPECÍFICOS DE PÁGINA DE BEBIDAS --- */
+
+/* Hero Banner */
+.drinks-hero-banner {
+    background-image: url('images/drinks_banner.jpg'); /* Imagen de fondo para el banner de bebidas */
+    background-size: cover;
+    background-position: center;
+    height: 300px; /* Altura consistente con el de postres */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: var(--light-text);
+    position: relative;
+}
+
+.drinks-hero-banner::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.3); /* Capa oscura semitransparente */
+    z-index: 1;
+}
+
+.drinks-hero-banner h1 {
+    font-family: 'Pacifico', cursive;
+    font-size: 3em;
+    color: var(--light-text);
+    margin-bottom: 10px;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+    z-index: 2;
+}
+
+/* Drink Category Section */
+.drink-category-section {
+    padding: 60px 5%;
+    background-color: #fcfcfc; /* Fondo blanco para las secciones */
+}
+
+.drink-category-section h2 {
+    font-family: 'Pacifico', cursive;
+    font-size: 2.5em;
+    color: var(--primary-pink);
+    text-align: center;
+    margin-bottom: 40px;
+    position: relative;
+}
+
+.drink-category-section h2::after {
+    content: '';
+    display: block;
+    width: 80px;
+    height: 3px;
+    background-color: var(--primary-pink);
+    margin: 15px auto 0 auto;
+    border-radius: 2px;
+}
+
+/* Drink Card Styling (similar to dessert-card, but named drink-card) */
+/* Reutilizamos muchos de los estilos de .dessert-card, solo cambiamos el nombre de la clase */
+.drink-card {
+    flex: 0 0 auto;
+    width: 300px; /* Ancho fijo para cada tarjeta de bebida */
+    background-color: var(--light-pink); /* Fondo rosa claro para la tarjeta */
+    border-radius: var(--border-radius-lg);
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.2s ease;
+    position: relative; /* Para el badge "De temporada" */
+}
+
+.drink-card:hover {
+    transform: translateY(-5px);
+}
+
+.drink-card img {
+    width: 100%;
+    height: 200px; /* Altura fija para la imagen de la bebida */
+    object-fit: cover;
+    border-bottom: 2px solid var(--primary-pink);
+}
+
+.drink-card .card-info {
+    padding: 20px;
+    text-align: center;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.drink-card .card-info h3 {
+    font-size: 1.4em;
+    color: var(--dark-text);
+    margin-bottom: 10px;
+    font-weight: 700;
+}
+
+.drink-card .card-info p {
+    font-size: 0.95em;
+    color: var(--grey-text);
+    line-height: 1.5;
+    margin-bottom: 15px;
+}
+
+.drink-card .card-info .price {
+    font-size: 1.2em;
+    font-weight: 700;
+    color: var(--primary-pink);
+    margin-top: auto;
+}
+
+/* Seasonal Badge Styling */
+.seasonal-badge {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background-color: var(--button-bg); 
+    color: white;
+    padding: 5px 10px;
+    border-radius: var(--border-radius-sm);
+    font-size: 0.8em;
+    font-weight: 700;
+    text-transform: uppercase;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}
 
 
 /* --- DISEÑO RESPONSIVO --- */
@@ -1250,5 +1382,66 @@ img {
 
     .dessert-card .card-info .price {
         font-size: 1.1em;
+    }
+}
+
+@media (max-width: 992px) {
+    .drinks-hero-banner {
+        height: 250px;
+    }
+    .drinks-hero-banner h1 {
+        font-size: 2.5em;
+    }
+    .drink-card {
+        width: 280px;
+    }
+}
+
+@media (max-width: 768px) {
+    .drinks-hero-banner {
+        height: 200px;
+    }
+    .drinks-hero-banner h1 {
+        font-size: 2em;
+    }
+    .drink-category-section {
+        padding: 40px 20px;
+    }
+    .drink-category-section h2 {
+        font-size: 2em;
+    }
+    .drink-card {
+        width: 260px;
+    }
+    .drink-card img {
+        height: 180px;
+    }
+}
+
+@media (max-width: 480px) {
+    .drinks-hero-banner {
+        height: 180px;
+    }
+    .drinks-hero-banner h1 {
+        font-size: 1.8em;
+    }
+    .drink-card {
+        width: 240px;
+    }
+    .drink-card img {
+        height: 160px;
+    }
+    .drink-card .card-info h3 {
+        font-size: 1.2em;
+    }
+    .drink-card .card-info p {
+        font-size: 0.85em;
+    }
+    .drink-card .card-info .price {
+        font-size: 1.1em;
+    }
+    .seasonal-badge {
+        font-size: 0.7em;
+        padding: 4px 8px;
     }
 }
