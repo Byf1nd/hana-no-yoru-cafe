@@ -39,29 +39,52 @@
         </section>
 
         <section class="services-list-section">
-            <div class="service-item">
+            <div class="service-item" data-service-id="menuEstacional">
                 <div class="service-image-wrapper">
                     <img src="images/servicio_menu_estacional.jpg" alt="Menú estacional">
                 </div>
-                <h2><a href="#" class="service-link">Menú estacional</a></h2>
+                <div class="service-header">
+                    <h2><a href="#" class="service-link" data-target="menuEstacionalExplanation">Menú estacional</a></h2>
+                </div>
+                <div id="menuEstacionalExplanation" class="service-explanation hidden">
+                    <p>Nuestro menú estacional cambia cada tres meses, ofreciendo platillos y bebidas inspirados en los ingredientes frescos y sabores de la temporada. ¡Siempre hay algo nuevo por descubrir!</p>
+                </div>
             </div>
-            <div class="service-item">
+
+            <div class="service-item" data-service-id="ceremoniasTe">
                 <div class="service-image-wrapper">
                     <img src="images/servicio_ceremonia_te.jpg" alt="Ceremonias del té guiadas">
                 </div>
-                <h2><a href="#" class="service-link">Ceremonias del té guiadas</a></h2>
+                <div class="service-header">
+                    <h2><a href="#" class="service-link" data-target="ceremoniasTeExplanation">Ceremonias del té guiadas</a></h2>
+                </div>
+                <div id="ceremoniasTeExplanation" class="service-explanation hidden">
+                    <p>Sumérgete en la tradición japonesa con nuestras ceremonias del té guiadas. Aprende sobre el arte del matcha y disfruta de una experiencia cultural única en un ambiente sereno.</p>
+                </div>
             </div>
-            <div class="service-item">
+
+            <div class="service-item" data-service-id="tiendaProductos">
                 <div class="service-image-wrapper">
                     <img src="images/servicio_tienda_productos.jpg" alt="Tienda de productos seleccionados">
                 </div>
-                <h2><a href="#" class="service-link">Tienda de productos seleccionados</a></h2>
+                <div class="service-header">
+                    <h2><a href="#" class="service-link" data-target="tiendaProductosExplanation">Tienda de productos seleccionados</a></h2>
+                </div>
+                <div id="tiendaProductosExplanation" class="service-explanation hidden">
+                    <p>Explora nuestra selección curada de tés premium, dulces japoneses, accesorios de cerámica y otros productos únicos para llevar la experiencia de Hana no Yoru a tu hogar.</p>
+                </div>
             </div>
-            <div class="service-item">
+
+            <div class="service-item" data-service-id="membresia">
                 <div class="service-image-wrapper">
                     <img src="images/servicio_membresia.jpg" alt="Membresía">
                 </div>
-                <h2><a href="#" class="service-link">Membresía</a></h2>
+                <div class="service-header">
+                    <h2><a href="#" class="service-link" data-target="membresiaExplanation">Membresía</a></h2>
+                </div>
+                <div id="membresiaExplanation" class="service-explanation hidden">
+                    <p>Únete a nuestra membresía nocturna y disfruta de beneficios exclusivos como descuentos especiales, acceso a eventos privados y adelantos de nuestro menú estacional.</p>
+                </div>
             </div>
         </section>
 
@@ -72,7 +95,7 @@
         <section class="info-section">
             <div class="contact-hours-container">
                 <div class="contact-info">
-                    <img src="images/logo_circular.png" alt="Hana no Yoru Café Logo Pequeño" class="small-logo">
+                    <img src="images/logo.png" alt="Hana no Yoru Café Logo Pequeño" class="small-logo">
                     <h2>Visítanos:</h2>
                     <ul>
                         <li><i class="fas fa-map-marker-alt"></i> Marsella 39, Colonia Juárez</li>
